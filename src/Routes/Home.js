@@ -8,13 +8,19 @@ const Section = styled.section`
   position: relative;
   &.main{
       height: 1080px;
-      background: url('images/img-main.jpg') no-repeat center center;
+      background: url('./images/img-main.jpg') #333 no-repeat center center;
       transition: all 0.5s ease-in-out;
+      .inner{
+        position: relative;
+        width: 1140px;
+        margin: 0 auto;
+        height: 100%;
+      }
       & .textbox{
           position: absolute;
           top: 58%;
-          left: 5%;
-          width: 344px;
+          left: 1%;
+          width: 28%;
           height: 68px;
           line-height: 68px;
           text-align: center;
@@ -24,10 +30,10 @@ const Section = styled.section`
       }
       & h2{
           position: absolute;
-          top: 68%;
-          left: 5%;
+          top: 67%;
+          left: 1%;
           color: white;
-          font-size: 6em;
+          font-size: 5.2em;
           line-height: 1.15;
           font-weight: 500;
           letter-spacing: -1px;
@@ -38,6 +44,14 @@ const Section = styled.section`
       background-color: #a2c5c7;
       display: flex;
       align-items: center;
+      .inner{
+        position: relative;
+        width: 1320px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
       & .left{
           flex: 1;
           width: 24px;
@@ -116,25 +130,29 @@ class Home extends React.Component{
     return (
       <>
         <Section className="main">
-          <h1>태학관</h1>
-          <div className="textbox">Tae Hak Gwan House</div>
-          <h2>태학관은 다양한 국적의 <br/>사람들이 모여사는 개인 원룸형 주거 공간입니다.</h2>
+          <div className="inner">
+            <h1>태학관</h1>
+            <div className="textbox">Tae Hak Gwan House</div>
+            <h2>태학관은 다양한 국적의 <br/>사람들이 모여사는 개인 원룸형 주거 공간입니다.</h2>
+          </div>
         </Section>
         <Section className="rooms">
-          <div className="left"></div>
-          <div className="box">
-            <div className="room"></div>
-            <div className="info">
-              <h4>함께 사용하는 공유 라운지</h4>
-              <div>
-                공유 라운지는 태학관 모든 사람과 공유되는 공간으로 자유롭게 24시간 사용가능합니다. 자연스럽게 함께 사는 사람들과 소통하고 교류하며 이웃을 알 수 있습니다. 공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다. 
+          <div className="inner">
+            <div className="left"></div>
+            <div className="box">
+              <div className="room"></div>
+              <div className="info">
+                <h4>함께 사용하는 공유 라운지</h4>
+                <div>
+                  공유 라운지는 태학관 모든 사람과 공유되는 공간으로 자유롭게 24시간 사용가능합니다. 자연스럽게 함께 사는 사람들과 소통하고 교류하며 이웃을 알 수 있습니다. 공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다. 
+                </div>
+                <a href="/rooms">
+                  <span className="more">더보기 > </span>
+                </a>
               </div>
-              <a href="/rooms">
-                <span className="more">더보기 > </span>
-              </a>
             </div>
+            <div className="right"></div>
           </div>
-          <div className="right"></div>
         </Section> 
         <Sns/>
         <Location/>

@@ -7,6 +7,14 @@ const Section = styled.section`
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
+    .inner{
+        position: relative;
+        width: 1320px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
     & .left{
         flex: 1;
         width: 24px;
@@ -73,22 +81,24 @@ const Section = styled.section`
 
 const Location = () => (
     <Section>
-    <div className="left"></div>
-    <div className="box">
-      <div className="info">
-        <h4>태학관 오는 방법</h4>
-        <div>
-        주변 버스 정보 | <span>5515B 버스 탑승 후<br/>
-        현대 아파트 종점에서 하차</span> <br/><br/>
-        오시는 길과 방법은 메신저를 통해 <br/>자세히 안내해 드립니다. 
+        <div className="inner">
+            <div className="left"></div>
+            <div className="box">
+            <div className="info">
+                <h4>태학관 오는 방법</h4>
+                <div>
+                주변 버스 정보 | <span>5515B 버스 탑승 후<br/>
+                현대 아파트 종점에서 하차</span> <br/><br/>
+                오시는 길과 방법은 메신저를 통해 <br/>자세히 안내해 드립니다. 
+                </div>
+                <a href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-">
+                <span className="more">카카오톡으로 안내받기</span>
+                </a>
+            </div>
+            <div className="map"></div>
+            </div>
+            <div className="right"></div>
         </div>
-        <a href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-">
-          <span className="more">카카오톡으로 안내받기</span>
-        </a>
-      </div>
-      <div className="map"></div>
-    </div>
-    <div className="right"></div>
     </Section>
 );
 

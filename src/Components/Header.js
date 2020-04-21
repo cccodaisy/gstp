@@ -10,10 +10,8 @@ const Header = styled.header`
     width: 100%;
     min-width: 1000px;
     height: 195px;
-    display: flex;
-    align-items: center;
     background-color:  ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
-    z-index: 999;
+    z-index: 10;
     transition: all 0.5s ease-in-out;
     color: white;
 `;
@@ -21,17 +19,21 @@ const Header = styled.header`
 const Inner = styled.div`
     position: relative;
     width: 1140px;
+    min-width: 1000px;
     margin: 0 auto;
+    padding: 4% 0;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
 `;
 
 const Logo = styled.div`
     flex: 1;
-    margin-left: 4%;
 `;
 
 
 const List = styled.ul`
-    flex: 2;
+    flex: 3;
     display: block;
 `;
 
@@ -64,7 +66,7 @@ const SLink = styled(Link)`
     justify-content: center;
     font-size: 1.3em;
     &.home{
-        background: url('./images/logo.png') no-repeat;
+        background: url('./images/logo.png') #ff0 no-repeat;
         background-size: 80px 100px;
         margin-left: 5%;
     }

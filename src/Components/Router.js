@@ -21,7 +21,7 @@ export default () => (
                 <Route path="/facility" component={Facility} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/language" component={Language} />
-                {/* <Redirect from="*" to="/" /> */}
+                <Redirect from="*" to="/" />
             </Switch>
             <Footer/>
         </>
