@@ -8,7 +8,7 @@ const Section = styled.section`
   position: relative;
   &.main{
       height: 1080px;
-      background: url('./images/img-main.jpg') #333 no-repeat center center;
+      background: url('./images/img-main.jpg') no-repeat center center;
       transition: all 0.5s ease-in-out;
       .inner{
         position: relative;
