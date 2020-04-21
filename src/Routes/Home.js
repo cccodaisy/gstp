@@ -52,7 +52,7 @@ const Section = styled.section`
           position: relative;
           & .room{
               flex: 4;
-              background: url('images/banner-1.jpg') no-repeat center;
+              background: url('./images/banner-1.jpg') no-repeat center;
               width: 941px;
               height: 680px;
           }
@@ -87,7 +87,7 @@ const Section = styled.section`
                   bottom: 12%;
                   left: 10%;
                   &:hover{
-                      background-color: #ebeb14;
+                    background-color: #ebeb14;
                   }
               }
           }

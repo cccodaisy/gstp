@@ -57,7 +57,7 @@ const Section = styled.section`
             }
         }
         & .map{
-            background: url('img-map.jpg') no-repeat center;
+            background: url('./images/img-map.jpg') no-repeat center;
             min-width: 700px;
             width: 873px;
             height: 680px;

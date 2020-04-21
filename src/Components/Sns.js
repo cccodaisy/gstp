@@ -64,14 +64,14 @@ const Sns = () => (
         </p>
         <Contacts>
             <Social>
-                <img src="img-kakaotalk-logo.png" alt="kakao"/>
+                <img src="./images/img-kakaotalk-logo.png" alt="kakao"/>
                 <Snsid>
                     Kakao Plus | <span>GDTHG7</span>
                 </Snsid>
                 <Connect href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-" target="blank">카카오톡으로 상담하기</Connect>
             </Social>
             <Social>
-                <img src="img-wechat-logo.png" alt="kakao"/>
+                <img src="./images/img-wechat-logo.png" alt="kakao"/>
                 <Snsid>
                     WeChat | <span>GDTHG7</span>
                 </Snsid>

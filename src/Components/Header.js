@@ -64,7 +64,7 @@ const SLink = styled(Link)`
     justify-content: center;
     font-size: 1.3em;
     &.home{
-        background: url('images/logo.png') no-repeat;
+        background: url('./images/logo.png') no-repeat;
         background-size: 80px 100px;
         margin-left: 5%;
     }
