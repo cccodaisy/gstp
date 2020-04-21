@@ -18,6 +18,12 @@ const Header = styled.header`
     color: white;
 `;
 
+const Inner = styled.div`
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+`;
+
 const Logo = styled.div`
     flex: 1;
     margin-left: 4%;
@@ -58,7 +64,7 @@ const SLink = styled(Link)`
     justify-content: center;
     font-size: 1.3em;
     &.home{
-        background: url('./logo.png') no-repeat;
+        background: url('images/logo.png') no-repeat;
         background-size: 80px 100px;
         margin-left: 5%;
     }
@@ -66,25 +72,27 @@ const SLink = styled(Link)`
 
 export default withRouter (({ location: {pathname }}) => (
     <Header current={ pathname }>
-        <Logo>
-            <SLink to="/" className="home" style={{height: "80px"}}></SLink>
-        </Logo>
-        <List>
-            <Item current={ pathname === "/language" }>
-                <SLink to="/language">한국어</SLink>
-            </Item>
-            <Item current={ pathname === "/contact" }>
-                <SLink to="/contact">Contact &amp; Location</SLink>
-            </Item>
-            <Item current={ pathname === "/facility" }>
-                <SLink to="/facility">Facilities</SLink>
-            </Item>
-            <Item current={ pathname === "/apartment" }>
-                <SLink to="/apartment">Apartment Type</SLink>
-            </Item>
-            <Item current={ pathname === "/aboutus" }>
-                <SLink to="/aboutus">AboutUs</SLink>
-            </Item>
-        </List>
+        <Inner>
+            <Logo>
+                <SLink to="/" className="home" style={{height: "80px"}}></SLink>
+            </Logo>
+            <List>
+                <Item current={ pathname === "/language" }>
+                    <SLink to="/language">한국어</SLink>
+                </Item>
+                <Item current={ pathname === "/contact" }>
+                    <SLink to="/contact">Contact &amp; Location</SLink>
+                </Item>
+                <Item current={ pathname === "/facility" }>
+                    <SLink to="/facility">Facilities</SLink>
+                </Item>
+                <Item current={ pathname === "/apartment" }>
+                    <SLink to="/apartment">Apartment Type</SLink>
+                </Item>
+                <Item current={ pathname === "/aboutus" }>
+                    <SLink to="/aboutus">AboutUs</SLink>
+                </Item>
+            </List>
+        </Inner>
     </Header>
 ))

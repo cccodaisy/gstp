@@ -80,7 +80,7 @@ export default withRouter (({ location: {pathname }}) => (
     <Footer>
         <Infos>
             <Logo>
-                <SLink to="/"><img src="./logo.png" width="140" height="170" alt="태학관로고"/></SLink>
+                <SLink to="/"><img src="./images/logo.png" width="140" height="170" alt="태학관로고"/></SLink>
             </Logo>
             <Lists>
                 <List>

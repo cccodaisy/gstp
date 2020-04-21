@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Sns from "../Components/Sns";
-import Location from "../Components/Location";
+import Sns from "Components/Sns";
+import Location from "Components/Location";
 
 const Section = styled.section`
     width: 100%;

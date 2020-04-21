@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch} from "react-router-dom";
-import Home from "../Routes/Home";
-import AboutUs from "../Routes/AboutUs";
-import Apartment from "../Routes/Apartment";
-import Facility from "../Routes/Facility";
-import Contact from "../Routes/Contact";
-import Language from "../Routes/Language";
-import Header from "./Header";
-import Footer from "./Footer";
+import Home from "Routes/Home";
+import AboutUs from "Routes/AboutUs";
+import Apartment from "Routes/Apartment";
+import Facility from "Routes/Facility";
+import Contact from "Routes/Contact";
+import Language from "Routes/Language";
+import Header from "Components/Header";
+import Footer from "Components/Footer";
 
 
 export default () => (
@@ -21,7 +21,7 @@ export default () => (
                 <Route path="/facility" component={Facility} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/language" component={Language} />
-                <Redirect from="*" to="/" />
+                {/* <Redirect from="*" to="/" /> */}
             </Switch>
             <Footer/>
         </>

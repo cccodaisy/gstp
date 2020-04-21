@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import Sns from '../Components/Sns'
-import Location from '../Components/Location'
+import Sns from 'Components/Sns'
+import Location from 'Components/Location'
 
 const Section = styled.section`
   width: 100%;
   position: relative;
   &.main{
       height: 1080px;
-      background: url('img-main.jpg') no-repeat center center;
+      background: url('images/img-main.jpg') no-repeat center center;
       transition: all 0.5s ease-in-out;
       & .textbox{
           position: absolute;
@@ -52,7 +52,7 @@ const Section = styled.section`
           position: relative;
           & .room{
               flex: 4;
-              background: url('banner-1.jpg') no-repeat center;
+              background: url('images/banner-1.jpg') no-repeat center;
               width: 941px;
               height: 680px;
           }
