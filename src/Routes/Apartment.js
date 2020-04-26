@@ -75,18 +75,18 @@ function Apartment(props){
                 <div className="inner">
                     <OptionInfo>
                         <h4>옵션</h4>
-                        <img src="../gstp/images/img-option-bed.png" alt="옵션이미지"/>
+                        <img src="../images/img-option-bed.png" alt="옵션이미지"/>
                         <h4>보안 시설</h4>
-                        <img src="../gstp/images/img-security.png" alt="보안이미지"/>
+                        <img src="../images/img-security.png" alt="보안이미지"/>
                     </OptionInfo>
                     <RoomImg>
-                        <img src="../gstp/images/img-option-bed-1.jpg" alt="침대있는 원룸 이미지1"/>
-                        <img src="../gstp/images/img-option-bed-2.jpg" alt="침대있는 원룸 이미지2"/>
-                        <img src="../gstp/images/img-option-bed-3.jpg" alt="침대있는 원룸 이미지3"/>
-                        <img src="../gstp/images/img-option-bed-4.jpg" alt="침대있는 원룸 이미지4"/>
-                        <img src="../gstp/images/img-option-bed-5.jpg" alt="침대있는 원룸 이미지5"/>
-                        <img src="../gstp/images/img-option-bed-6.jpg" alt="침대있는 원룸 이미지6"/>
-                        <img src="../gstp/images/img-option-bed-7.jpg" alt="침대있는 원룸 이미지7"/>
+                        <img src="../images/img-option-bed-1.jpg" alt="침대있는 원룸 이미지1"/>
+                        <img src="../images/img-option-bed-2.jpg" alt="침대있는 원룸 이미지2"/>
+                        <img src="../images/img-option-bed-3.jpg" alt="침대있는 원룸 이미지3"/>
+                        <img src="../images/img-option-bed-4.jpg" alt="침대있는 원룸 이미지4"/>
+                        <img src="../images/img-option-bed-5.jpg" alt="침대있는 원룸 이미지5"/>
+                        <img src="../images/img-option-bed-6.jpg" alt="침대있는 원룸 이미지6"/>
+                        <img src="../images/img-option-bed-7.jpg" alt="침대있는 원룸 이미지7"/>
                     </RoomImg>
                 </div>
             </Section>

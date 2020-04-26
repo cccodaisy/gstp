@@ -41,24 +41,29 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
+    position: relative;
     height: 65px;
     display: block;
     float: right;
-    margin: 0 3%;
-    padding: 0 1%;
+    margin: 0 2.2%;
+    padding: 0 1.6%;
     text-align: center;
     border-bottom: 3px solid
      ${props => props.current ? "#ffff25" : "transparent" };
     transition: border-bottom .5s ease-in-out;
     color:  ${props => props.current ? "#ffff25" : "white" };
     &:first-child {
-        margin-right: 5%;
+        margin-right: 2%;
     }
     &:last-child{
         margin-left: 0;
     }
     &:hover {
         border-bottom: 3px solid #ffff25;
+    }
+    &:hover > div{
+        display: block;
+        transition: display 1s linear;
     }
 `;
 
@@ -73,9 +78,39 @@ const SLink = styled(Link)`
         background-size: 80px 100px;
         margin-left: 5%;
     }
+    & > span{
+        margin: 0 0 0 15px;
+        border-style:solid; 
+        border-width: 6px;
+        border-color:  white transparent transparent transparent;
+    }
 `;
 
-export default withRouter (({ location: { pathname }}) => (
+const Deps = styled.div`
+    transition: display 1s linear;
+    position: absolute;
+    display: none;
+    top: 65px;
+    left: 0;
+`
+const DLink = styled(Link)`
+    width: 139px;
+    height: 50px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.4em;
+    color: #4d4d4d;
+    border-bottom: 1px solid #c9c9c9;
+    &:last-child{
+        border-bottom: unset;
+    }
+`;
+
+
+export default withRouter (
+    ({ location: { pathname }}) => (
     <Header current={ pathname }>
         <Inner>
             <Logo>
@@ -83,13 +118,21 @@ export default withRouter (({ location: { pathname }}) => (
             </Logo>
             <List>
                 <Item current={ pathname === "/language" }>
-                    <SLink to="/language">Language</SLink>
+                    <SLink>Language<span></span></SLink>
+                    <Deps>
+                        <DLink to="/kr" style={{width: '150px'}}>한국어</DLink>
+                        <DLink to="/eng" style={{width: '150px'}}>English</DLink>
+                    </Deps>
                 </Item>
                 <Item current={ pathname === "/contact" }>
                     <SLink to="/contact">Contact &amp; Location</SLink>
                 </Item>
                 <Item current={ pathname.includes("/facility") }>
-                    <SLink to="/facility/lounge">Facilities</SLink>
+                    <SLink>Facilities<span></span></SLink>
+                    <Deps>
+                        <DLink to="/facility/lounge">공유 라운지</DLink>
+                        <DLink to="/facility/surround">주변 시설</DLink>
+                    </Deps>
                 </Item>
                 <Item current={ pathname.includes('/apartment') }>
                     <SLink to="/apartment/bed">Apartment Type</SLink>

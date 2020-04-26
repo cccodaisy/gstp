@@ -118,9 +118,9 @@ function Facility2(props){
                         힐링의 숲 공원이 인접해 있습니다. 
                         </p>
                         <DetailImg>
-                            <img src="../gstp/images/img-facilities-1.jpg" alt="둘레길 이미지1"/>
-                            <img src="../gstp/images/img-facilities-2.jpg" alt="둘레길 이미지2"/>
-                            <img src="../gstp/images/img-facilities-3.jpg" alt="둘레길 이미지3"/>
+                            <img src="../images/img-facilities-1.jpg" alt="둘레길 이미지1"/>
+                            <img src="../images/img-facilities-2.jpg" alt="둘레길 이미지2"/>
+                            <img src="../images/img-facilities-3.jpg" alt="둘레길 이미지3"/>
                         </DetailImg>
                     </DetailInfo>
                     <ShortInfo>
@@ -132,12 +132,12 @@ function Facility2(props){
                             </p>
                         </div>
                         <div>
-                            <img src="../gstp/images/img-facilities-4.jpg" alt="서울대 이미지" />
+                            <img src="../images/img-facilities-4.jpg" alt="서울대 이미지" />
                         </div>
                     </ShortInfo>
                     <ShortInfo>
                         <div>
-                            <img src="../gstp/images/img-facilities-5.jpg" alt="도림천길 이미지" />
+                            <img src="../images/img-facilities-5.jpg" alt="도림천길 이미지" />
                         </div>
                         <div class='textbox'>
                             <h4>3. 도림천 산책 &amp; 자전거길 (도보 7분)</h4>

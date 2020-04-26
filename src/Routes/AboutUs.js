@@ -60,9 +60,9 @@ function AboutUs(props){
                     개인 원룸형 주거 공간으로 각 개인 원룸 아파트에는 풀 옵션(세탁기,냉장고, 에어컨, 책상, 장농 등)인 설비시설과 <br/>
                     개인 부엌과 개인 화장실과 개인 샤워시설이 있습니다.
                     </p>
-                    <img src="gstp/images/img-about-1.jpg" alt="태학관 이미지1"/>
-                    <img src="gstp/images/img-about-2.jpg" alt="태학관 이미지2"/>
-                    <img src="gstp/images/img-about-3.jpg" alt="태학관 이미지3"/>
+                    <img src="images/img-about-1.jpg" alt="태학관 이미지1"/>
+                    <img src="images/img-about-2.jpg" alt="태학관 이미지2"/>
+                    <img src="images/img-about-3.jpg" alt="태학관 이미지3"/>
                 </div>
             </Section>
             <Sns />

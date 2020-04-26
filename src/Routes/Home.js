@@ -3,14 +3,12 @@ import styled from 'styled-components';
 import Sns from '../Components/Sns'
 import Slider from '../Components/Slider'
 import Location from '../Components/Location'
-import ARROW_R from '../images/arrow-right.png';
-import ARROW_L from '../images/arrow-left.png';
 
 const Section = styled.section`
   width: 100%;
   position: relative;
   height: 1080px;
-  background: url('gstp/images/img-main.jpg') no-repeat center center;
+  background: url('/images/img-main.jpg') no-repeat center center;
   background-size: auto 100%;
   transition: all 0.5s ease-in-out;
   .inner{

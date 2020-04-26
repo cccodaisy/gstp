@@ -68,6 +68,7 @@ const AddressInfo = styled.div`
 const Location = () => (
     <Section>
         <Inner>
+            <div />
             <AddressInfo>
                 <h3>태학관 오는 방법</h3>
                 <div>
@@ -80,6 +81,7 @@ const Location = () => (
                 </a>
             </AddressInfo>
             <a className="map" href={MAP} target="_blank"></a>
+            <div />
         </Inner>
     </Section>
 );

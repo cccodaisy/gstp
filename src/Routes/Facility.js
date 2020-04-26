@@ -76,9 +76,9 @@ function Facility(props){
                         개인실 원룸형 아파트 구조면서 건물 1층에 공유공간 거실을 함께 가지고 있습니다. <br/>
                         공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다. 
                         </p>
-                        <img src="../gstp/images/img-sharelounge-1.jpg" alt="라운지 이미지1"/>
-                        <img src="../gstp/images/img-sharelounge-2.jpg" alt="라운지 이미지2"/>
-                        <img src="../gstp/images/img-sharelounge-3.jpg" alt="라운지 이미지3"/>
+                        <img src="../images/img-sharelounge-1.jpg" alt="라운지 이미지1"/>
+                        <img src="../images/img-sharelounge-2.jpg" alt="라운지 이미지2"/>
+                        <img src="../images/img-sharelounge-3.jpg" alt="라운지 이미지3"/>
                     </DetailInfo>
                 </div>
             </Section>

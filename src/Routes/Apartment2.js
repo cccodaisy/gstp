@@ -76,20 +76,20 @@ function Apartment2(props){
                 <div className="inner">
                     <OptionInfo>
                         <h4>옵션</h4>
-                        <img src="../gstp/images/img-option-nobed.png" alt="옵션이미지"/>
+                        <img src="../images/img-option-nobed.png" alt="옵션이미지"/>
                         <h4>보안 시설</h4>
-                        <img src="../gstp/images/img-security.png" alt="보안이미지"/>
+                        <img src="../images/img-security.png" alt="보안이미지"/>
                     </OptionInfo>
                     <RoomImg>
-                        <img src="../gstp/images/img-option-nobed-1.jpg" alt="침대없는 원룸 이미지1"/>
-                        <img src="../gstp/images/img-option-nobed-2.jpg" alt="침대없는 원룸 이미지2"/>
-                        <img src="../gstp/images/img-option-nobed-3.jpg" alt="침대없는 원룸 이미지3"/>
-                        <img src="../gstp/images/img-option-nobed-4.jpg" alt="침대없는 원룸 이미지4"/>
-                        <img src="../gstp/images/img-option-nobed-5.jpg" alt="침대없는 원룸 이미지5"/>
-                        <img src="../gstp/images/img-option-nobed-6.jpg" alt="침대없는 원룸 이미지6"/>
-                        <img src="../gstp/images/img-option-nobed-7.jpg" alt="침대없는 원룸 이미지7"/>
-                        <img src="../gstp/images/img-option-nobed-8.jpg" alt="침대없는 원룸 이미지8"/>
-                        <img src="../gstp/images/img-option-nobed-9.jpg" alt="침대없는 원룸 이미지9"/>
+                        <img src="../images/img-option-nobed-1.jpg" alt="침대없는 원룸 이미지1"/>
+                        <img src="../images/img-option-nobed-2.jpg" alt="침대없는 원룸 이미지2"/>
+                        <img src="../images/img-option-nobed-3.jpg" alt="침대없는 원룸 이미지3"/>
+                        <img src="../images/img-option-nobed-4.jpg" alt="침대없는 원룸 이미지4"/>
+                        <img src="../images/img-option-nobed-5.jpg" alt="침대없는 원룸 이미지5"/>
+                        <img src="../images/img-option-nobed-6.jpg" alt="침대없는 원룸 이미지6"/>
+                        <img src="../images/img-option-nobed-7.jpg" alt="침대없는 원룸 이미지7"/>
+                        <img src="../images/img-option-nobed-8.jpg" alt="침대없는 원룸 이미지8"/>
+                        <img src="../images/img-option-nobed-9.jpg" alt="침대없는 원룸 이미지9"/>
                     </RoomImg>
                 </div>
             </Section>
