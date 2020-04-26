@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import LOGO_FT from "../images/logo-footer.png";
 
 const Footer = styled.footer`
     color: white;
@@ -10,6 +11,8 @@ const Footer = styled.footer`
 
 const Infos = styled.div`
     display: flex;
+    width: 1400px;
+    margin: 0 auto;
     height: 515px;
     align-items: center;
     justify-content: center;
@@ -22,7 +25,7 @@ const Logo = styled.div`
 
 const Lists = styled.div`
     display: flex;
-    flex: 2;
+    flex: 4;
     flex-flow: column wrap; 
 `;
 
@@ -31,7 +34,6 @@ const List = styled.ul`
     flex-direction: row;
     border-top: 1px solid #707070;
     padding: 2% 0;
-    margin-right: 10%;
     &:first-child{
         border-top: unset;
     }
@@ -59,9 +61,14 @@ const SnsLinks = styled.li`
 
 const SnsLink = styled.div`
     flex: 1;
+    font-size: 1.2em;
     & a{
         color: white;
         border-bottom: 1px solid white;
+        transition: color 0.3s linear;
+        &:hover{
+            color: #ff0;
+        }
     }
 `;
 
@@ -69,10 +76,18 @@ const SLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
+    font-size: 1.2em;
+    &.left{
+        align-items: left;
+        justify-content: left;
+    }
     & span{
         color: #acacac;
         padding-left: 10px;
+    }
+    transition: color 0.3s linear;
+    &:hover{
+        color: #ff0;
     }
 `;
 
@@ -80,7 +95,7 @@ export default withRouter (({ location: {pathname }}) => (
     <Footer>
         <Infos>
             <Logo>
-                <SLink to="/"><img src="./images/logo.png" width="140" height="170" alt="태학관로고"/></SLink>
+                <SLink to="/" className='left'><img src={LOGO_FT} width="140" height="170" alt="태학관로고"/></SLink>
             </Logo>
             <Lists>
                 <List>
@@ -109,7 +124,7 @@ export default withRouter (({ location: {pathname }}) => (
                     </Item>
                 </List>
                 <List className="sns">
-                    <Item>
+                    <Item style={{fontSize: '16.8px'}}>
                         서울 관악구 대학18길 30   
                     </Item>
                     <SnsLinks>

@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Sns from "Components/Sns";
-import Location from "Components/Location";
+import Sns from "../Components/Sns";
+import Location from "../Components/Location";
+import MAIL from "../images/mail.png";
+import INSTAGRAM from "../images/instagram.png";
+import FACEBOOK from "../images/facebook.png";
 
 const Section = styled.section`
     width: 100%;
@@ -9,13 +12,24 @@ const Section = styled.section`
     align-items: center;
     flex-direction: column;
     padding: 0 0 7% 0;
-    & h4{
+    & h3{
         text-align: center;
         font-size: 2.4em;
         color: #333;
         font-weight: bold;
-        background-color: #ffff25;
-        margin: 20px 0 50px 0;
+        margin: 20px;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            left: -15px;
+            background-color: #ffff25;
+            height: 20px;
+            z-index: -1;
+            bottom: -8px;
+            padding: 0 15px;
+        }
     }
 `;
 
@@ -49,6 +63,7 @@ const Connect = styled.a`
     font-weight: bold;
     border: solid 1px #707070;
     border-radius: 3em;
+    transition: background-color, border 0.3s linear;
     &:visited{
         background-color: #d8d8d8;
         border: solid 1px #d8d8d8;
@@ -64,24 +79,24 @@ function Contact(){
         <>
             <Sns/>
             <Section>
-                <h4>태학관 이메일 &amp;소셜미디어</h4>
+                <h3>태학관 이메일 &amp;소셜미디어</h3>
                 <Contacts>
                     <Social>
-                        <img src="mail.png" alt="kakao"/>
+                        <img src={MAIL} alt="mail"/>
                         <Snsid>
                             Email | <span>taehakgwan@gmail.com</span>
                         </Snsid>
                         <Connect href="mailto:taehakgwan@gmail.com" target="blank">이메일 보내기 </Connect>
                     </Social>
                     <Social>
-                        <img src="instagram-1.png" alt="kakao"/>
+                        <img src={INSTAGRAM} alt="instagram"/>
                         <Snsid>
                             Instagram | <span>@taehakgwan</span>
                         </Snsid>
                         <Connect href="https://www.instagram.com/taehakgwan/" target="blank">인스타그램 방문하기</Connect>
                     </Social>
                     <Social>
-                        <img src="facebook-1.png" alt="kakao"/>
+                        <img src={FACEBOOK} alt="facebook"/>
                         <Snsid>
                             Facebook | <span>@THG.house</span>
                         </Snsid>

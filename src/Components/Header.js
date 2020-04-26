@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
+import LOGO from "../images/logo-thg-d.png";
 
 const Header = styled.header`
     color: white;
@@ -9,7 +10,7 @@ const Header = styled.header`
     left: 0;
     width: 100%;
     min-width: 1000px;
-    height: 195px;
+    height: 100%;
     background-color:  ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
     z-index: 10;
     transition: all 0.5s ease-in-out;
@@ -18,10 +19,10 @@ const Header = styled.header`
 
 const Inner = styled.div`
     position: relative;
-    width: 1140px;
+    width: 1400px;
     min-width: 1000px;
     margin: 0 auto;
-    padding: 4% 0;
+    padding: 2.5% 0;
     display: flex;
     align-items: center;
     transition: all 0.5s ease-in-out;
@@ -33,8 +34,10 @@ const Logo = styled.div`
 
 
 const List = styled.ul`
-    flex: 3;
+    flex: 4;
     display: block;
+    margin-top: -1%
+
 `;
 
 const Item = styled.li`
@@ -64,32 +67,32 @@ const SLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3em;
+    font-size: 1.4em;
     &.home{
-        background: url('./images/logo-thg-d.png') no-repeat;
+        background: url(${LOGO}) no-repeat;
         background-size: 80px 100px;
         margin-left: 5%;
     }
 `;
 
-export default withRouter (({ location: {pathname }}) => (
+export default withRouter (({ location: { pathname }}) => (
     <Header current={ pathname }>
         <Inner>
             <Logo>
-                <SLink to="/" className="home" style={{height: "80px"}}></SLink>
+                <SLink to="/" className="home" style={{height: "100px"}}></SLink>
             </Logo>
             <List>
                 <Item current={ pathname === "/language" }>
-                    <SLink to="/language">한국어</SLink>
+                    <SLink to="/language">Language</SLink>
                 </Item>
                 <Item current={ pathname === "/contact" }>
                     <SLink to="/contact">Contact &amp; Location</SLink>
                 </Item>
-                <Item current={ pathname === "/facility" }>
-                    <SLink to="/facility">Facilities</SLink>
+                <Item current={ pathname.includes("/facility") }>
+                    <SLink to="/facility/lounge">Facilities</SLink>
                 </Item>
-                <Item current={ pathname === "/apartment" }>
-                    <SLink to="/apartment">Apartment Type</SLink>
+                <Item current={ pathname.includes('/apartment') }>
+                    <SLink to="/apartment/bed">Apartment Type</SLink>
                 </Item>
                 <Item current={ pathname === "/aboutus" }>
                     <SLink to="/aboutus">AboutUs</SLink>
