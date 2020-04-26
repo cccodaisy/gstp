@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/gstp/static/js/main.666eaafc.chunk.js",
-    "main.js.map": "/gstp/static/js/main.666eaafc.chunk.js.map",
+    "main.js": "/gstp/static/js/main.a711133f.chunk.js",
+    "main.js.map": "/gstp/static/js/main.a711133f.chunk.js.map",
     "runtime-main.js": "/gstp/static/js/runtime-main.34baa5b5.js",
     "runtime-main.js.map": "/gstp/static/js/runtime-main.34baa5b5.js.map",
-    "static/js/2.97f89587.chunk.js": "/gstp/static/js/2.97f89587.chunk.js",
-    "static/js/2.97f89587.chunk.js.map": "/gstp/static/js/2.97f89587.chunk.js.map",
+    "static/js/2.df555282.chunk.js": "/gstp/static/js/2.df555282.chunk.js",
+    "static/js/2.df555282.chunk.js.map": "/gstp/static/js/2.df555282.chunk.js.map",
     "index.html": "/gstp/index.html",
-    "precache-manifest.121dac4d00aa594f40b7c083eca64205.js": "/gstp/precache-manifest.121dac4d00aa594f40b7c083eca64205.js",
+    "precache-manifest.b1644f02b4bc21c8722ed25b0270848b.js": "/gstp/precache-manifest.b1644f02b4bc21c8722ed25b0270848b.js",
     "service-worker.js": "/gstp/service-worker.js",
-    "static/js/2.97f89587.chunk.js.LICENSE.txt": "/gstp/static/js/2.97f89587.chunk.js.LICENSE.txt",
+    "static/js/2.df555282.chunk.js.LICENSE.txt": "/gstp/static/js/2.df555282.chunk.js.LICENSE.txt",
     "static/media/img-kakaotalk-logo.png": "/gstp/static/media/img-kakaotalk-logo.63086250.png",
     "static/media/img-map.jpg": "/gstp/static/media/img-map.e1e425d8.jpg",
     "static/media/img-wechat-logo.png": "/gstp/static/media/img-wechat-logo.ac6415c1.png",
@@ -18,7 +18,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.34baa5b5.js",
-    "static/js/2.97f89587.chunk.js",
-    "static/js/main.666eaafc.chunk.js"
+    "static/js/2.df555282.chunk.js",
+    "static/js/main.a711133f.chunk.js"
   ]
 }
