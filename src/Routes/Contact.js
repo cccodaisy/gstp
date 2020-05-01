@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Sns from "../Components/Sns";
-import Location from "../Components/Location";
-import MAIL from "../images/mail.png";
-import INSTAGRAM from "../images/instagram.png";
-import FACEBOOK from "../images/facebook.png";
+import Sns from "Components/Sns";
+import Location from "Components/Location";
+import MAIL from "images/mail.png";
+import INSTAGRAM from "images/instagram.png";
+import FACEBOOK from "images/facebook.png";
 
 const Section = styled.section`
     width: 100%;
@@ -14,7 +14,7 @@ const Section = styled.section`
     padding: 0 0 7% 0;
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px;
@@ -75,6 +75,10 @@ const Connect = styled.a`
 `;
 
 function Contact(){
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     return (
         <>
             <Sns/>

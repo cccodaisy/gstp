@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Sns from "../Components/Sns";
+import Sns from "Components/Sns";
 
 const Section = styled.section`
     width: 100%;
@@ -10,13 +10,13 @@ const Section = styled.section`
     padding: 7% 0 0 0;
     padding-bottom: 2%;
     .inner{
-        width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         height: 100%;
       }
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px auto 5% auto;
@@ -70,7 +70,7 @@ const DetailImg = styled.div`
 const ShortInfo = styled.div`
     display: flex;
     margin-bottom: 60px;
-    padding-bottom: 360px;
+    padding-bottom: 30px;
     border-bottom: 1px solid #d8d8d8;
     div{
         width: 49%;
@@ -83,7 +83,7 @@ const ShortInfo = styled.div`
                 margin-top: 0;
             }
             p{
-                width: 70%;
+                width: 75%;
             }
         }
         &:nth-child(even){
@@ -100,8 +100,12 @@ const ShortInfo = styled.div`
     }
 `
 
-function Facility2(props){
-    console.log(props);
+function Facility2(){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
     return (
         <>
             <Section>
@@ -118,9 +122,9 @@ function Facility2(props){
                         힐링의 숲 공원이 인접해 있습니다. 
                         </p>
                         <DetailImg>
-                            <img src="../images/img-facilities-1.jpg" alt="둘레길 이미지1"/>
-                            <img src="../images/img-facilities-2.jpg" alt="둘레길 이미지2"/>
-                            <img src="../images/img-facilities-3.jpg" alt="둘레길 이미지3"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-1.jpg`} alt="둘레길 이미지1"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-2.jpg`} alt="둘레길 이미지2"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-3.jpg`} alt="둘레길 이미지3"/>
                         </DetailImg>
                     </DetailInfo>
                     <ShortInfo>
@@ -132,12 +136,12 @@ function Facility2(props){
                             </p>
                         </div>
                         <div>
-                            <img src="../images/img-facilities-4.jpg" alt="서울대 이미지" />
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-4.jpg`} alt="서울대 이미지" />
                         </div>
                     </ShortInfo>
                     <ShortInfo>
                         <div>
-                            <img src="../images/img-facilities-5.jpg" alt="도림천길 이미지" />
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-5.jpg`} alt="도림천길 이미지" />
                         </div>
                         <div class='textbox'>
                             <h4>3. 도림천 산책 &amp; 자전거길 (도보 7분)</h4>

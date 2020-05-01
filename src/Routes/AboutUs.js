@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Sns from '../Components/Sns'
+import Sns from 'Components/Sns'
 
 const Section = styled.section`
     width: 100%;
@@ -10,13 +10,13 @@ const Section = styled.section`
     padding: 7% 0;
     padding-bottom: 2%;
     .inner{
-        width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         height: 100%;
       }
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px;
@@ -48,8 +48,10 @@ const Section = styled.section`
     }
 `;
 
-function AboutUs(props){
-    console.log(props);
+function AboutUs(){
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     return (
         <>
             <Section>
@@ -60,9 +62,9 @@ function AboutUs(props){
                     개인 원룸형 주거 공간으로 각 개인 원룸 아파트에는 풀 옵션(세탁기,냉장고, 에어컨, 책상, 장농 등)인 설비시설과 <br/>
                     개인 부엌과 개인 화장실과 개인 샤워시설이 있습니다.
                     </p>
-                    <img src="images/img-about-1.jpg" alt="태학관 이미지1"/>
-                    <img src="images/img-about-2.jpg" alt="태학관 이미지2"/>
-                    <img src="images/img-about-3.jpg" alt="태학관 이미지3"/>
+                    <img src={`${process.env.REACT_APP_IMG}images/img-about-1.jpg`} alt="태학관 이미지1"/>
+                    <img src={`${process.env.REACT_APP_IMG}images/img-about-2.jpg`} alt="태학관 이미지2"/>
+                    <img src={`${process.env.REACT_APP_IMG}images/img-about-3.jpg`} alt="태학관 이미지3"/>
                 </div>
             </Section>
             <Sns />

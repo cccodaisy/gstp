@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import LOGO_FT from "../images/logo-footer.png";
+import LOGO_FT from "images/logo-footer.png";
 
 const Footer = styled.footer`
     color: white;
@@ -11,7 +11,7 @@ const Footer = styled.footer`
 
 const Infos = styled.div`
     display: flex;
-    width: 1400px;
+    max-width: 1400px;
     margin: 0 auto;
     height: 515px;
     align-items: center;
@@ -67,7 +67,7 @@ const SnsLink = styled.div`
         border-bottom: 1px solid white;
         transition: color 0.3s linear;
         &:hover{
-            color: #ff0;
+            text-decoration: underline;
         }
     }
 `;
@@ -84,10 +84,13 @@ const SLink = styled(Link)`
     & span{
         color: #acacac;
         padding-left: 10px;
+        &:hover{
+            color: white;
+        }
     }
     transition: color 0.3s linear;
     &:hover{
-        color: #ff0;
+        text-decoration: underline;
     }
 `;
 
@@ -103,12 +106,13 @@ export default withRouter (({ location: {pathname }}) => (
                         <SLink to="/aboutus">About Us</SLink>
                     </Item>
                     <Item>
-                        <SLink to="/apartment">Apartment Type</SLink>
+                        <SLink to="/apartment/bed">Apartment Type</SLink>
                     </Item>
                     <Item>
-                        <SLink to="/facility">
+                        <SLink>
                             Facilities 
-                            <span>공유 라운지 / 태학관 주변 시설 안내</span>
+                            <Link to="/facility/lounge"><span>공유 라운지</span></Link>
+                            <Link to="/facility/surround"><span>/ 태학관 주변 시설 안내</span></Link>
                         </SLink>
                     </Item>
                     <Item>

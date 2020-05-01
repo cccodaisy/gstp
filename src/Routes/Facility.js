@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Sns from "../Components/Sns";
+import Sns from "Components/Sns";
 
 const Section = styled.section`
     width: 100%;
@@ -10,13 +10,13 @@ const Section = styled.section`
     padding: 7% 0 0 0;
     padding-bottom: 2%;
     .inner{
-        width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         height: 100%;
       }
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px auto 5% auto;
@@ -61,10 +61,11 @@ const DetailInfo = styled.div`
     }
 `
 
-const DetailImg = styled.div`
-`
-
 function Facility(props){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     console.log(props);
     return (
         <>
@@ -76,9 +77,9 @@ function Facility(props){
                         개인실 원룸형 아파트 구조면서 건물 1층에 공유공간 거실을 함께 가지고 있습니다. <br/>
                         공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다. 
                         </p>
-                        <img src="../images/img-sharelounge-1.jpg" alt="라운지 이미지1"/>
-                        <img src="../images/img-sharelounge-2.jpg" alt="라운지 이미지2"/>
-                        <img src="../images/img-sharelounge-3.jpg" alt="라운지 이미지3"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-1.jpg`} alt="라운지 이미지1"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-2.jpg`} alt="라운지 이미지2"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-3.jpg`} alt="라운지 이미지3"/>
                     </DetailInfo>
                 </div>
             </Section>

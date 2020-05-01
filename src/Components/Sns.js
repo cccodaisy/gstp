@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import KAKAO_LOGO from "../images/img-kakaotalk-logo.png"
-import WECHAT_LOGO from "../images/img-wechat-logo.png"
+import KAKAO_LOGO from "images/img-kakaotalk-logo.png"
+import WECHAT_LOGO from "images/img-wechat-logo.png"
 
 const Section = styled.section`
     width: 100%;
@@ -11,7 +11,7 @@ const Section = styled.section`
     padding: 7% 0;
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px;

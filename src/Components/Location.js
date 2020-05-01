@@ -1,6 +1,7 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import styled from "styled-components";
-import MAP from '../images/img-map.jpg'
+import MAP from 'images/img-map.jpg'
 
 const Section = styled.section`
     width: 100%;
@@ -11,27 +12,31 @@ const Section = styled.section`
 `;
 
 const Inner = styled.div`
-    width: 1400px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     background-color: white;
-    display: flex;
-    align-items: center;
+    display: block;
     position: relative;
+    & div{
+        float: left;
+    }
     & .map{
-        background: url(${MAP}) no-repeat center;
-        width: 70%;
+        background: url(${MAP}) no-repeat center right;
+        width: 65%;
         height: 680px;
-        background-size: 100%;
+        background-size: auto 100%;
+        position: absolute;
     }
 `
 
 const AddressInfo = styled.div`
-    flex: 1 auto;
     font-size: 1.4em;
     position: relative;
+    width: 35%;
     height: 680px;
     h3{
-        font-size: 40px;
+        font-size: 2em;
         color: #333;
         letter-spacing: -1px;
         width: 80%;
@@ -68,7 +73,6 @@ const AddressInfo = styled.div`
 const Location = () => (
     <Section>
         <Inner>
-            <div />
             <AddressInfo>
                 <h3>태학관 오는 방법</h3>
                 <div>
@@ -76,12 +80,11 @@ const Location = () => (
                 현대 아파트 종점에서 하차</span> <br/><br/>
                 오시는 길과 방법은 메신저를 통해 <br/>자세히 안내해 드립니다. 
                 </div>
-                <a href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-">
-                <span className="more">카카오톡으로 안내받기</span>
-                </a>
+                <Link to="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-">
+                    <span className="more">카카오톡으로 안내받기</span>
+                </Link>
             </AddressInfo>
-            <a className="map" href={MAP} target="_blank"></a>
-            <div />
+            <Link className="map" to={MAP} target="_blank" rel="noopener noreferrer" ></Link>
         </Inner>
     </Section>
 );

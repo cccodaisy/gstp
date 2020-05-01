@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import LOGO from "../images/logo-thg-d.png";
+import LOGO from "images/logo-thg-d.png";
 
 const Header = styled.header`
     color: white;
@@ -9,8 +9,6 @@ const Header = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 1000px;
-    height: 100%;
     background-color:  ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
     z-index: 10;
     transition: all 0.5s ease-in-out;
@@ -19,24 +17,28 @@ const Header = styled.header`
 
 const Inner = styled.div`
     position: relative;
-    width: 1400px;
-    min-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 2.5% 0;
+    padding: 40px 0;
     display: flex;
     align-items: center;
     transition: all 0.5s ease-in-out;
 `;
 
 const Logo = styled.div`
-    flex: 1;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    width: 100px;
+    height: 100px;
 `;
 
 
 const List = styled.ul`
     flex: 4;
     display: block;
-    margin-top: -1%
+    margin-top: -7px;
 
 `;
 
@@ -45,8 +47,8 @@ const Item = styled.li`
     height: 65px;
     display: block;
     float: right;
-    margin: 0 2.2%;
-    padding: 0 1.6%;
+    margin: 0 1.8%;
+    padding: 0 10px;
     text-align: center;
     border-bottom: 3px solid
      ${props => props.current ? "#ffff25" : "transparent" };
@@ -75,8 +77,7 @@ const SLink = styled(Link)`
     font-size: 1.4em;
     &.home{
         background: url(${LOGO}) no-repeat;
-        background-size: 80px 100px;
-        margin-left: 5%;
+        background-size: auto 85px;
     }
     & > span{
         margin: 0 0 0 15px;
@@ -94,7 +95,7 @@ const Deps = styled.div`
     left: 0;
 `
 const DLink = styled(Link)`
-    width: 139px;
+    width: 150px;
     height: 50px;
     background-color: #f5f5f5;
     display: flex;
@@ -114,21 +115,21 @@ export default withRouter (
     <Header current={ pathname }>
         <Inner>
             <Logo>
-                <SLink to="/" className="home" style={{height: "100px"}}></SLink>
+                <SLink to="/" className="home" style={{height: "85px"}}></SLink>
             </Logo>
             <List>
                 <Item current={ pathname === "/language" }>
-                    <SLink>Language<span></span></SLink>
+                    <SLink style={{width: '130px'}}>Language<span></span></SLink>
                     <Deps>
-                        <DLink to="/kr" style={{width: '150px'}}>한국어</DLink>
-                        <DLink to="/eng" style={{width: '150px'}}>English</DLink>
+                        <DLink to="/kr" >한국어</DLink>
+                        <DLink to="/eng" >English</DLink>
                     </Deps>
                 </Item>
                 <Item current={ pathname === "/contact" }>
                     <SLink to="/contact">Contact &amp; Location</SLink>
                 </Item>
                 <Item current={ pathname.includes("/facility") }>
-                    <SLink>Facilities<span></span></SLink>
+                    <SLink style={{width: '130px'}}>Facilities<span></span></SLink>
                     <Deps>
                         <DLink to="/facility/lounge">공유 라운지</DLink>
                         <DLink to="/facility/surround">주변 시설</DLink>

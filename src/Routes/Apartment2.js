@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Sns from "../Components/Sns";
-import Rooms from "../Components/Rooms";
+import Sns from "Components/Sns";
+import Rooms from "Components/Rooms";
 
 
 const Section = styled.section`
@@ -13,13 +12,13 @@ const Section = styled.section`
     padding: 7% 0 0 0;
     padding-bottom: 2%;
     .inner{
-        width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
         height: 100%;
       }
     & h3{
         text-align: center;
-        font-size: 2.4em;
+        font-size: 2.8em;
         color: #333;
         font-weight: bold;
         margin: 20px auto 7% auto;
@@ -66,30 +65,32 @@ const RoomImg = styled.div`
     }
 `
 
-function Apartment2(props){
-    // console.log(props);
+function Apartment2(){
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
     return (
         <>
             <Section>
                 <h3>원룸 타입별 안내</h3>
-                <Rooms/>
                 <div className="inner">
+                <Rooms/>
                     <OptionInfo>
                         <h4>옵션</h4>
-                        <img src="../images/img-option-nobed.png" alt="옵션이미지"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed.png`} alt="옵션이미지"/>
                         <h4>보안 시설</h4>
-                        <img src="../images/img-security.png" alt="보안이미지"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-security.png`} alt="보안이미지"/>
                     </OptionInfo>
                     <RoomImg>
-                        <img src="../images/img-option-nobed-1.jpg" alt="침대없는 원룸 이미지1"/>
-                        <img src="../images/img-option-nobed-2.jpg" alt="침대없는 원룸 이미지2"/>
-                        <img src="../images/img-option-nobed-3.jpg" alt="침대없는 원룸 이미지3"/>
-                        <img src="../images/img-option-nobed-4.jpg" alt="침대없는 원룸 이미지4"/>
-                        <img src="../images/img-option-nobed-5.jpg" alt="침대없는 원룸 이미지5"/>
-                        <img src="../images/img-option-nobed-6.jpg" alt="침대없는 원룸 이미지6"/>
-                        <img src="../images/img-option-nobed-7.jpg" alt="침대없는 원룸 이미지7"/>
-                        <img src="../images/img-option-nobed-8.jpg" alt="침대없는 원룸 이미지8"/>
-                        <img src="../images/img-option-nobed-9.jpg" alt="침대없는 원룸 이미지9"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-1.jpg`} alt="침대없는 원룸 이미지1"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-2.jpg`} alt="침대없는 원룸 이미지2"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-3.jpg`} alt="침대없는 원룸 이미지3"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-4.jpg`} alt="침대없는 원룸 이미지4"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-5.jpg`} alt="침대없는 원룸 이미지5"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-6.jpg`} alt="침대없는 원룸 이미지6"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-7.jpg`} alt="침대없는 원룸 이미지7"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-8.jpg`} alt="침대없는 원룸 이미지8"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-9.jpg`} alt="침대없는 원룸 이미지9"/>
                     </RoomImg>
                 </div>
             </Section>
