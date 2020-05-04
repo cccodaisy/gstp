@@ -35,6 +35,14 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
+    @media only screen and (max-width: 780px) {   
+        width: 88%; 
+        margin-left: 6%;  
+        & h3{
+            font-size: 2em;
+            margin: 10% auto 20% auto;
+        }
+    }
 `;
 
 const OptionInfo = styled.div`
@@ -52,15 +60,23 @@ const OptionInfo = styled.div`
 `
 
 const RoomImg = styled.div`
-    img{
-        width: 49%;
-        margin-bottom: 2%;
-        &:nth-child(odd){
-            margin-left: 2%;
-        }
-        &:first-child{
+    @media only screen and (max-width: 780px) {      
+        img{
             width: 100%;
-            margin-left: 0;
+            margin-bottom: 4%;
+        }
+    }
+    @media only screen and (min-width: 781px) {     
+        img{
+            width: 49%;
+            margin-bottom: 2%;
+            &:nth-child(odd){
+                margin-left: 2%;
+            }
+            &:first-child{
+                width: 100%;
+                margin-left: 0;
+            }
         }
     }
 `

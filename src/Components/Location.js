@@ -5,7 +5,7 @@ import MAP from 'images/img-map.jpg'
 
 const Section = styled.section`
     width: 100%;
-    height: 824px;
+    padding: 70px 0;
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@ const Inner = styled.div`
     background-color: white;
     display: block;
     position: relative;
-    & div{
+    & > div{
         float: left;
     }
     & .map{
@@ -28,6 +28,19 @@ const Inner = styled.div`
         background-size: auto 100%;
         position: absolute;
     }
+    @media only screen and (max-width: 780px) {    
+        width: 88%;  
+        & > div{
+            float: unset;
+            width: 100%;
+            height: 400px;
+        }
+        & .map{
+            top: 0;
+            width: 100%;
+            height: 360px;
+        }
+    }
 `
 
 const AddressInfo = styled.div`
@@ -35,7 +48,7 @@ const AddressInfo = styled.div`
     position: relative;
     width: 35%;
     height: 680px;
-    h3{
+    & h3{
         font-size: 2em;
         color: #333;
         letter-spacing: -1px;
@@ -44,7 +57,7 @@ const AddressInfo = styled.div`
         font-weight: bold;
         margin-bottom: 70px;
     }
-    div{
+    & div{
         line-height: 1.67;
         text-align: left;
         width: 70%;
@@ -53,7 +66,7 @@ const AddressInfo = styled.div`
             font-weight: bold;
         }
     }
-    .more{
+    & .more{
         padding: 20px 40px;
         text-align: center;
         font-weight: bold;
@@ -66,6 +79,29 @@ const AddressInfo = styled.div`
         transition: background-color 0.3s linear;
         &:hover{
             background-color: #ebeb14;
+        }
+    }
+    @media only screen and (max-width: 780px) {   
+        font-size: 1.1em;   
+        & h3{
+            font-size: 1.6em;
+            width: 100%;
+            text-align: center;
+            margin 105% auto 15% auto;
+        }
+        & div{
+            text-align: center;
+            width: 100%;
+            margin: unset;
+        }
+        & a{
+            margin: 18% auto;
+            text-align: center;
+            width: 100%;
+            display: block;
+            & .more{
+                position: unset;
+            }
         }
     }
 `

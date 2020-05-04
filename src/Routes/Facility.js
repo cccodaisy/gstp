@@ -33,30 +33,49 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
-    h4{
+    & h4{
         font-size: 1.5em;
         text-align: center;
         font-weight: bold;
         margin-top: 60px;
     }
-    p{
+    & p{
         font-size: 1.3em;
         margin: 30px auto 50px auto;
         text-align: center;
         line-height: 1.9;
     }
+    @media only screen and (max-width: 780px) {   
+        width: 88%;
+        margin-left: 6%;   
+        & h3{
+            font-size: 2em;
+            margin:  10% auto;
+        }
+        & p{
+            font-size: 1.1em;
+        }
+    }
 `;
 
 const DetailInfo = styled.div`
-    img{
-        width: 49%;
-        &:nth-child(even){
-            margin-left: 2%;
-        }
-        &:first-of-type{
+    @media only screen and (max-width: 780px) {      
+        img{
             width: 100%;
-            margin-left: 0;
-            margin-bottom: 2%;
+            margin-bottom: 4%;
+        }
+    }
+    @media only screen and (min-width: 781px) {    
+        img{
+            width: 49%;
+            &:nth-child(even){
+                margin-left: 2%;
+            }
+            &:first-of-type{
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 2%;
+            }
         }
     }
 `

@@ -8,6 +8,10 @@ const List = styled.ul`
     width: 100%;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width: 780px) {
+        width: 88%;
+        margin: 0 6%;
+    }
 `;
 
 const Item = styled.li`
@@ -37,6 +41,9 @@ const SLink = styled(Link)`
     align-items: center;
     justify-content: center;
     font-size: 1.8em;
+    @media only screen and (max-width: 780px) {     
+        font-size: 1.3em;
+    }
 `;
 
 export default withRouter (({ location: { pathname }}) => (

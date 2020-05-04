@@ -23,6 +23,9 @@ const Inner = styled.div`
     display: flex;
     align-items: center;
     transition: all 0.5s ease-in-out;
+    @media only screen and (max-width: 780px) {
+        
+    }
 `;
 
 const Logo = styled.div`
@@ -32,6 +35,9 @@ const Logo = styled.div`
     top: 25px;
     width: 100px;
     height: 100px;
+    @media only screen and (max-width: 780px) {
+        left: 5%;
+    }
 `;
 
 

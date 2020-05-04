@@ -9,11 +9,11 @@ const Section = styled.section`
     flex-direction: column;
     padding: 7% 0 0 0;
     padding-bottom: 2%;
-    .inner{
+    & .inner{
         max-width: 1200px;
         margin: 0 auto;
         height: 100%;
-      }
+    }
     & h3{
         text-align: center;
         font-size: 2.8em;
@@ -33,17 +33,31 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
-    h4{
+    & h4{
         font-size: 1.5em;
         text-align: center;
         font-weight: bold;
         margin-top: 60px;
     }
-    p{
+    & p{
         font-size: 1.3em;
         margin: 30px auto 50px auto;
         text-align: center;
         line-height: 1.9;
+    }
+    @media only screen and (max-width: 780px) { 
+        width: 88%;
+        margin-left: 6%;   
+        & .inner{
+            margin-bottom: 20%;
+        }  
+        & h3{
+            font-size: 2em;
+            margin: 10% auto;
+        }
+        & p{
+            font-size: 1.1em;
+        }
     }
 `;
 
@@ -54,15 +68,23 @@ const DetailInfo = styled.div`
 `
 
 const DetailImg = styled.div`
-    img{
-        width: 49%;
-        margin-bottom: 2%;
-        &:nth-child(odd){
-            margin-left: 2%;
-        }
-        &:first-child{
+    @media only screen and (max-width: 780px) {      
+        img{
             width: 100%;
-            margin-left: 0;
+            margin-bottom: 4%;
+        }
+    }
+    @media only screen and (min-width: 781px) {   
+        img{
+            width: 49%;
+            margin-bottom: 2%;
+            &:nth-child(odd){
+                margin-left: 2%;
+            }
+            &:first-child{
+                width: 100%;
+                margin-left: 0;
+            }
         }
     }
 `
@@ -72,7 +94,7 @@ const ShortInfo = styled.div`
     margin-bottom: 60px;
     padding-bottom: 30px;
     border-bottom: 1px solid #d8d8d8;
-    div{
+    & div{
         width: 49%;
         margin-bottom: 2%;
         &.textbox{
@@ -97,6 +119,24 @@ const ShortInfo = styled.div`
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: unset;
+    }
+    @media only screen and (max-width: 780px) {   
+        flex-direction: column;
+        & div{
+            width: 100%;
+            margin-bottom: 4%;
+            &.textbox{
+                & p{
+                    width: 100%;
+                }
+            }
+            &:nth-child(even){
+                margin-left: 0%;
+            }  
+        }
+        &:last-child{
+            flex-direction: column-reverse;
+        }
     }
 `
 

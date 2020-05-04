@@ -32,7 +32,7 @@ const Section = styled.section`
       color: white;
       font-size: 4.3em;
       line-height: 1.15;
-      font-weight: 500;
+      font-weight: bold;
       letter-spacing: -1px;
   }
 `;
@@ -46,7 +46,6 @@ const Inner = styled.div`
 
 const SlideContainer = styled.div`
   width: 100%;
-  height: 913px;
   background-color: #a2c5c7;
   & .slick-slider{
     box-sizing: border-box;
@@ -94,7 +93,7 @@ const RoomImg = styled.div`
     background: url(${props => props.bgImg}) white no-repeat center;
     background-size: 120%;
     width: 50%;
-    height: 680px;
+    height: 544px;
     display: block;
     float: left;
 `
@@ -103,7 +102,7 @@ const RoomInfo = styled.div`
     font-size: 1.4em;
     position: relative;
     width: 50%;
-    height: 680px;
+    height: 544px;
     display: block;
     float: left;
     background: white;
@@ -187,6 +186,8 @@ class Home extends React.Component {
     const settings = {
       dots: false,
       infinite: true,
+      autoplay: true,
+      speed: 2000,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -196,18 +197,15 @@ class Home extends React.Component {
     return (
       <>
         <Section>
+          <h1>태학관</h1>
           <Inner height='100%'>
-            <h1>태학관</h1>
             <div className="textbox">Taehakgwan House</div>
-            <h2>태학관은 다양한 국적의 <br />사람들이 모여사는 개인 원룸형 주거 공간입니다.</h2>
+            <h2>태학관은 다양한 국적의 <br />사람들이 모여사는 개인 원룸형<br/> 주거 공간입니다.</h2>
           </Inner>
         </Section>
         <SlideContainer>
           <Inner style={{padding: '106px 0'}}>
             <Slider {...settings}>
-              {/* <img src='gstp/images/banner-1.jpg' />
-              <img src='gstp/images/banner-1.jpg' />
-              <img src='gstp/images/banner-1.jpg' /> */}
               <Slide
                 bgImg='gstp/images/banner-1.jpg'
                 href='/facility'
@@ -221,7 +219,7 @@ class Home extends React.Component {
                 desc='태학관의 원룸은 기본 옵션이 냉장고, 세탁기, 전기인덕션, 부엌싱크대, 책상, 의자, 서재, 에어콘, 개인용 화장실과 샤워실(세면대)가 제공됩니다. 여러개의 원룸은 타입이 크게 두가지로 침대가 있는 원룸, 없는 원룸으로 나뉘어집니다. '
               />
               <Slide
-                bgImg='gstp/images/banner-3.jpg'
+                bgImg='images/banner-3.jpg'
                 href='facility'
                 title='서울 둘레길'
                 desc='서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 ‘서울 둘레길 제 5구간’으로 되어져 있습니다.

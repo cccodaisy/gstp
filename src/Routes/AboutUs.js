@@ -39,11 +39,27 @@ const Section = styled.section`
         text-align: center;
         line-height: 1.9;
     }
-    & img{
-        width: 100%;
-        margin-bottom: 35px;
-        &:last-child{
-            margin-bottom: 0;
+    @media only screen and (min-width: 781px) {     
+        & img{
+            width: 100%;
+            margin-bottom: 35px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media only screen and (max-width: 780px) {      
+        & h3{
+            font-size: 2em;
+            margin:  10% auto;
+        }
+        & p{
+            font-size: 1.1em;
+            padding: 0 30px;
+        }
+        & img{
+            width: 88%;
+            margin: 0 6% 2% 6%;
         }
     }
 `;

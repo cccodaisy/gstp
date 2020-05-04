@@ -31,12 +31,20 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
+    @media only screen and (max-width: 780px) {      
+        & h3{
+            font-size: 2em;
+        }
+    }
 `;
 
 const Contacts = styled.div`
     display: flex;
     width: 100%;
     padding: 3% 17%;
+    @media only screen and (max-width: 780px) { 
+        flex-direction: column;
+    }
 `;
 
 const Social = styled.div`
@@ -44,6 +52,9 @@ const Social = styled.div`
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    @media only screen and (max-width: 780px) { 
+        margin: 15% auto;
+    }
 `;
 
 const Snsid = styled.div`
@@ -53,6 +64,9 @@ const Snsid = styled.div`
     & span{
         font-weight: bold;
         color: black;
+    }
+    @media only screen and (max-width: 780px) { 
+        font-size: 1.2em;
     }
 `;
 
@@ -71,6 +85,9 @@ const Connect = styled.a`
     &:hover, &:active {
         background-color: #f5f5f5;
         border: solid 1px #f5f5f5;
+    }
+    @media only screen and (max-width: 780px) { 
+        font-size: 1.1em;
     }
 `;
 

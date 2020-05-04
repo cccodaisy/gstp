@@ -34,12 +34,24 @@ const Section = styled.section`
         margin: 30px 0 50px 0;
         text-align: center;
     }
+    @media only screen and (max-width: 780px) {      
+        & h3{
+            font-size: 2em;
+        }
+        & p{
+            font-size: 1.2em;
+            margin: 30px 30px 50px 30px;
+        }
+    }
 `;
 
 const Contacts = styled.div`
     display: flex;
     width: 100%;
     padding: 3% 20%;
+    @media only screen and (max-width: 780px) {   
+        flex-direction: column;
+    }
 `;
 
 const Social = styled.div`
@@ -47,6 +59,18 @@ const Social = styled.div`
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    & img{
+        width: 120px;
+    }
+    @media only screen and (max-width: 780px) {   
+        margin: 20% auto;
+        &:first-child{
+            margin-top: 0;
+        }
+        & img{
+            width: 80px;
+        }
+    }
 `;
 
 const Snsid = styled.div`
@@ -56,6 +80,9 @@ const Snsid = styled.div`
     & span{
         font-weight: bold;
         color: black;
+    }
+    @media only screen and (max-width: 780px) {   
+        font-size: 1.1em;
     }
 `;
 
@@ -70,6 +97,9 @@ const Connect = styled.a`
     &:hover, &:active{
         background-color: #ebeb14;
     }
+    @media only screen and (max-width: 780px) {   
+        font-size: 1.1em;
+    }
 `;
 
 console.log(window.location.origin)
@@ -83,14 +113,14 @@ const Sns = (props) => (
         </p>
         <Contacts>
             <Social>
-                <img src={KAKAO_LOGO} alt="kakao" width='120' />
+                <img src={KAKAO_LOGO} alt="kakao"/>
                 <Snsid>
                     Kakao Plus | <span>GDTHG7</span>
                 </Snsid>
                 <Connect href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-" target="blank">카카오톡으로 상담하기</Connect>
             </Social>
             <Social>
-                <img src={WECHAT_LOGO} alt="wechat" width='120' />
+                <img src={WECHAT_LOGO} alt="wechat" />
                 <Snsid>
                     WeChat | <span>GDTHG7</span>
                 </Snsid>

@@ -13,25 +13,38 @@ const Infos = styled.div`
     display: flex;
     max-width: 1400px;
     margin: 0 auto;
-    height: 515px;
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
+    padding: 110px 0;
+    @media only screen and (max-width: 780px) {      
+        padding: 20px 0;
+    }
 `;
 
 const Logo = styled.div`
     flex: 1;
+    @media only screen and (max-width: 780px) {
+        display: none;
+    }
 `;
 
 const Lists = styled.div`
     display: flex;
     flex: 4;
     flex-flow: column wrap; 
+    @media only screen and (max-width: 780px) {
+        width: 90%;
+        margin: 0 5%;
+        display: block;
+        flex: unset;
+        flex-flow: unset; 
+    }
 `;
 
 const List = styled.ul`
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     border-top: 1px solid #707070;
     padding: 2% 0;
     &:first-child{
@@ -41,14 +54,20 @@ const List = styled.ul`
         flex-direction: column;
         color: #acacac;
     }
+    @media only screen and (max-width: 780px) {      
+        padding: 32px 0;
+        &:first-child{
+            padding-bottom: 50px;
+        }
+    }
 `;
 
 const Item = styled.li`
     margin: 10px 0;
     padding: 0 20px;
-    border-left: 1px solid white;
-    &:first-child{
-        border-left: unset;
+    border-right: 1px solid white;
+    &:last-child{
+        border-right: unset;
     }
 `;
 
@@ -57,6 +76,9 @@ const SnsLinks = styled.li`
     padding: 0 20px;
     display: flex;
     flex-direction: row;
+    @media only screen and (max-width: 780px) {      
+        flex-direction: column;
+    }
 `;
 
 const SnsLink = styled.div`
@@ -69,6 +91,9 @@ const SnsLink = styled.div`
         &:hover{
             text-decoration: underline;
         }
+    }
+    @media only screen and (max-width: 780px) {      
+        margin-bottom: 23px;
     }
 `;
 
@@ -128,7 +153,7 @@ export default withRouter (({ location: {pathname }}) => (
                     </Item>
                 </List>
                 <List className="sns">
-                    <Item style={{fontSize: '16.8px'}}>
+                    <Item style={{fontSize: '16.8px', borderRight: 'none'}}>
                         서울 관악구 대학18길 30   
                     </Item>
                     <SnsLinks>
