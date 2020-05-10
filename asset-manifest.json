@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/gstp/static/js/main.d8c03601.chunk.js",
-    "main.js.map": "/gstp/static/js/main.d8c03601.chunk.js.map",
+    "main.js": "/gstp/static/js/main.d8b0e7cd.chunk.js",
+    "main.js.map": "/gstp/static/js/main.d8b0e7cd.chunk.js.map",
     "runtime-main.js": "/gstp/static/js/runtime-main.71fc0311.js",
     "runtime-main.js.map": "/gstp/static/js/runtime-main.71fc0311.js.map",
     "static/js/2.e22e68d3.chunk.js": "/gstp/static/js/2.e22e68d3.chunk.js",
     "static/js/2.e22e68d3.chunk.js.map": "/gstp/static/js/2.e22e68d3.chunk.js.map",
     "index.html": "/gstp/index.html",
-    "precache-manifest.c6f192854e75547912b35293d7d3504c.js": "/gstp/precache-manifest.c6f192854e75547912b35293d7d3504c.js",
+    "precache-manifest.e3e90654afacc81c798fb57b8c8e9c2f.js": "/gstp/precache-manifest.e3e90654afacc81c798fb57b8c8e9c2f.js",
     "service-worker.js": "/gstp/service-worker.js",
     "static/js/2.e22e68d3.chunk.js.LICENSE.txt": "/gstp/static/js/2.e22e68d3.chunk.js.LICENSE.txt",
     "static/media/img-kakaotalk-logo.png": "/gstp/static/media/img-kakaotalk-logo.63086250.png",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.71fc0311.js",
     "static/js/2.e22e68d3.chunk.js",
-    "static/js/main.d8c03601.chunk.js"
+    "static/js/main.d8b0e7cd.chunk.js"
   ]
 }
