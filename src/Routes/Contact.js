@@ -79,13 +79,9 @@ const Connect = styled.a`
     border: solid 1px #707070;
     border-radius: 3em;
     transition: background-color, border 0.3s linear;
-    &:visited{
-        background-color: #d8d8d8;
-        border: solid 1px #d8d8d8;
-    }
     &:hover, &:active {
-        background-color: #f5f5f5;
-        border: solid 1px #f5f5f5;
+        background-color: #d8d8d8;;
+        border: solid 1px #d8d8d8;;
     }
     @media only screen and (max-width: 780px) { 
         font-size: 1.1em;

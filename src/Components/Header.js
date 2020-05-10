@@ -249,13 +249,24 @@ class HeaderWrapper extends React.Component {
     }
       
     trackScrolling = () => {
+        const { isMenuOpen } = this.state;
         const wrappedElement = document.getElementById('root');
         // console.log(wrappedElement.getBoundingClientRect().top)
         if(wrappedElement.getBoundingClientRect().top < -150){
             this.setState({
-                bgColor: '#4d4d4d'
+                bgColor: 'rgba(77, 77, 77, 0.6)'
             })
-        } else{
+            if(isMenuOpen === true) {
+                this.setState({
+                    bgColor: 'transparent'
+                })
+            } else {
+                this.setState({
+                    bgColor: 'rgba(77, 77, 77, 0.6)'
+                })
+            }
+        } 
+        else{
             this.setState({
                 bgColor: 'transparent'
             })
@@ -339,11 +350,23 @@ class HeaderWrapper extends React.Component {
                 styles={{ 
                     sidebar: {
                         background: "#4d4d4d",
-                        width: "70%"
-                    } 
+                        width: "80%"
+                    },
+                    content: {
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        overflowY: "auto",
+                        WebkitOverflowScrolling: "touch",
+                        transition: "left .3s ease-out, right .3s ease-out",
+                        zIndex: 2,
+                        height: '100px'
+                    }
                 }}
                 >
-                <Hamburger onClick={()=> this.toggleMenu()} 
+                <Hamburger onClick={()=> this.toggleMenu()}
                     className={isMenuOpen === true ? 'opened':''}
                 >
                     <span></span>
