@@ -1,39 +1,55 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Slider from "react-slick";
 import Sns from 'Components/Sns'
 import Location from 'Components/Location'
 import ARROW_R from 'images/arrow-right.png';
 import ARROW_L from 'images/arrow-left.png';
+import ARROW_D from 'images/arrow-down.png';
+
+const goToDown = keyframes`
+  0% {
+    margin-bottom: 60px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    margin-bottom: 0;
+    opacity: 0;
+  }
+`;
+
+const Fade = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const Moving = keyframes`
+  0% {
+    opacity: 0;
+    margin-bottom: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+`;
 
 const Section = styled.section`
   width: 100%;
   position: relative;
-  height: 1080px;
-  background: url('gstp/images/img-main.jpg') no-repeat center center;
-  background-size: auto 100%;
+  background: url('gstp/images/img-main.jpg') no-repeat center top;
+  background-size: cover;
   transition: all 0.5s ease-in-out;
-  & .textbox{
-      position: absolute;
-      top: 58%;
-      left: 0;
-      width: 28%;
-      height: 68px;
-      line-height: 68px;
-      text-align: center;
-      background-color: #a2c5c7;
-      color: white;
-      font-size: 1.85em;
-  }
-  & h2{
-      position: absolute;
-      top: 67%;
-      left: 0;
-      color: white;
-      font-size: 4.3em;
-      line-height: 1.15;
-      font-weight: bold;
-      letter-spacing: -1px;
+  @media only screen and (max-width: 780px) { 
+    background-position: 56% 50%;
+    background-size: auto 100%;
   }
 `;
 
@@ -41,7 +57,66 @@ const Inner = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  height: ${props => props.height};
+  min-height: 880px;
+  max-height: 1080px;
+  & .textbox{
+      position: absolute;
+      bottom: 40%;
+      left: 2%;
+      padding: 0 40px;
+      line-height: 2.7;
+      text-align: center;
+      background-color: #a2c5c7;
+      color: white;
+      font-size: 1.85em;
+      animation: ${Fade} 1s ease-in-out;
+  }
+  & h2{
+      position: absolute;
+      bottom: 2%;
+      left: 2%;
+      padding-bottom: 10%;
+      color: white;
+      font-size: 4.3em;
+      line-height: 1.15;
+      font-weight: bold;
+      letter-spacing: -1px;
+      animation: ${Moving} 2s ease-in-out;
+  }
+  & > img{
+    display: none;
+  }
+  
+  @media only screen and (max-width: 780px) { 
+    max-height: 780px;
+    & .textbox{
+      font-size: 1.5em;
+      padding: 0 30px;
+      margin: 100% auto 0 auto;
+      width: 250px;
+      left: 50%;
+      transform:translateX(-50%);
+    }
+    & h2{
+      font-size: 2.4em;
+      text-align: center;
+      line-height: 1.3;
+      padding-bottom: 40px;
+      left: 50%;
+      bottom: 15%;
+      width: 80%;
+      transform:translateX(-50%);
+    }
+    & > img{
+      display: block;
+      animation: ${goToDown} 2s infinite ease-in-out;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform:translateX(-50%);
+      width: 50px;
+    }
+  }
 `;
 
 const SlideContainer = styled.div`
@@ -87,6 +162,7 @@ const SlideContainer = styled.div`
   .slick-dots li button:focus:before,.slick-dots li button:hover:before{opacity:1}
   .slick-dots li button:before{font-size:12px;line-height:20px;position:absolute;top:0;left:0;width:20px;height:20px;content:'●';text-align:center;opacity:.25;color:#000}
   .slick-dots li.slick-active button:before{opacity:.75;color:#000}
+
 `;
 
 const RoomImg = styled.div`
@@ -96,6 +172,12 @@ const RoomImg = styled.div`
     height: 544px;
     display: block;
     float: left;
+    @media only screen and (max-width: 780px) { 
+      width: 88%;
+      margin-left: 6%;   
+      height: 350px;
+      float: unset;
+    }
 `
 
 const RoomInfo = styled.div`
@@ -106,7 +188,7 @@ const RoomInfo = styled.div`
     display: block;
     float: left;
     background: white;
-    h3{
+    & h3{
         font-size: 2em;
         color: #333;
         letter-spacing: -1px;
@@ -115,7 +197,7 @@ const RoomInfo = styled.div`
         font-weight: bold;
         margin-bottom: 70px;
     }
-    div{
+    & div{
         line-height: 1.67;
         text-align: left;
         width: 80%;
@@ -123,7 +205,7 @@ const RoomInfo = styled.div`
         text-overflow: ellipsis; 
         overflow: hidden;
     }
-    .more{
+    & .more{
         padding: 20px 60px;
         text-align: center;
         font-weight: bold;
@@ -137,6 +219,31 @@ const RoomInfo = styled.div`
         &:hover{
           background-color: #ebeb14;
         }
+    }
+    @media only screen and (max-width: 780px) { 
+      width: 88%;
+      margin-left: 6%;   
+      height: 460px;
+      float: unset;
+      padding-top: 60px;
+      & h3{
+        margin: 0 auto;
+        font-size: 1.3em;
+        width: 100%;
+        text-align: center;
+      }
+      & div{
+        font-size: 0.9em;
+        margin: 33px auto;
+        text-align: center;
+      }
+      & .more{
+        padding: 20px 0;
+        width: 55%;
+        display: block;
+        margin: 0 auto;
+        position: unset;
+      }
     }
 `
 
@@ -157,10 +264,18 @@ const Slide = (props) => (
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
+
   return (
+    window.innerWidth > 780 ? 
     <div
       className={className}
       style={{ ...style, display: "block", width: "50px", height: "50px", background: "url(" + ARROW_R + ") no-repeat center center", backgroundSize: "20px auto", position: "absolute", right: '-5%', top: 'calc(50% - 25px)', zIndex: 1 }}
+      onClick={onClick}
+    />
+    :
+    <div
+      className={className}
+      style={{ ...style, display: "none"}}
       onClick={onClick}
     />
   );
@@ -169,25 +284,35 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
+    window.innerWidth > 780 ? 
     <div
       className={className}
       style={{ ...style, display: "block", width: "50px", height: "50px", background: "url(" + ARROW_L + ") no-repeat center center", backgroundSize: "20px auto", position: "absolute", left: '-5%', top: 'calc(50% - 25px)', zIndex: 1  }}
+      onClick={onClick}
+    />
+    :
+    <div
+      className={className}
+      style={{ ...style, display: "none"}}
       onClick={onClick}
     />
   );
 }
 
 class Home extends React.Component {
+  state={
+    windowWidth: window.innerWidth
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   render() {
     const settings = {
-      dots: false,
+      dots: this.state.windowWidth > 780 ? false : true,
       infinite: true,
       autoplay: true,
-      speed: 2000,
+      autoplaySpeed: 2000,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -198,13 +323,17 @@ class Home extends React.Component {
       <>
         <Section>
           <h1>태학관</h1>
-          <Inner height='100%'>
+          <Inner>
             <div className="textbox">Taehakgwan House</div>
-            <h2>태학관은 다양한 국적의 <br />사람들이 모여사는 개인 원룸형<br/> 주거 공간입니다.</h2>
+            {this.state.windowWidth > 780 ? 
+            <h2>태학관은 다양한 국적의 <br />사람들이 모여사는 개인 원룸형<br/> 주거 공간입니다.</h2> 
+            : 
+            <h2>태학관은 다양한 국적의 사람들이 모여사는 개인 원룸형 주거 공간입니다.</h2>}
+            <img src={ARROW_D} alt='아래화살표'/>
           </Inner>
         </Section>
         <SlideContainer>
-          <Inner style={{padding: '106px 0'}}>
+          <Inner style={this.state.windowWidth > 780 ? {padding: '6% 0', minHeight: '400px'} : {padding: '30px 0', minHeight: '900px'}}>
             <Slider {...settings}>
               <Slide
                 bgImg='gstp/images/banner-1.jpg'
@@ -219,13 +348,17 @@ class Home extends React.Component {
                 desc='태학관의 원룸은 기본 옵션이 냉장고, 세탁기, 전기인덕션, 부엌싱크대, 책상, 의자, 서재, 에어콘, 개인용 화장실과 샤워실(세면대)가 제공됩니다. 여러개의 원룸은 타입이 크게 두가지로 침대가 있는 원룸, 없는 원룸으로 나뉘어집니다. '
               />
               <Slide
-                bgImg='images/banner-3.jpg'
+                bgImg='gstp/images/banner-3.jpg'
                 href='facility'
                 title='서울 둘레길'
-                desc='서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 ‘서울 둘레길 제 5구간’으로 되어져 있습니다.
+                desc={this.state.windowWidth > 780 ? `서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 '서울 둘레길 제 5구간'으로 되어져 있습니다.
                   태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관, 
-                  여러 체육시설(헬스장, 베트민턴장), 족구장, 국궁장, 조선 시대 유적 무덤, 한강과 여의도가 보이는 돌바위 view point, 
-                  불교 사찰인(보덕사, 약수사, 호암사)...'
+                  여러 체육시설(헬스장, 베트민턴장), 족구장, 국궁장, 조선 시대 유적 무덤, 한강과 여의도가 보이는 돌바위...` 
+                  : 
+                  `서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 '서울 둘레길 제 5구간'으로 되어져 있습니다.
+                  태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관, 
+                  여러 체육시설(헬스장, 베트민턴장)...`
+                }
               />
             </Slider>
           </Inner>

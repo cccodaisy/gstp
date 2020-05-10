@@ -48,6 +48,7 @@ const Section = styled.section`
     @media only screen and (max-width: 780px) {   
         width: 88%;
         margin-left: 6%;   
+        margin-top: 100px;   
         & h3{
             font-size: 2em;
             margin:  10% auto;
@@ -85,7 +86,6 @@ function Facility(props){
     useEffect(() => {
         window.scrollTo(0, 0);
     })
-    console.log(props);
     return (
         <>
             <Section>

@@ -9,6 +9,7 @@ const Section = styled.section`
     align-items: center;
     flex-direction: column;
     padding: 7% 0;
+    margin-top: ${props =>  props.marginTop};
     & h3{
         text-align: center;
         font-size: 2.8em;
@@ -102,10 +103,9 @@ const Connect = styled.a`
     }
 `;
 
-console.log(window.location.origin)
 
 const Sns = (props) => (
-    <Section>
+    <Section marginTop={props.marginTop}>
         <h3>입주 문의 및 상담방법</h3>
         <p>
             {props.snsText ?? "자세한 입주 문의 및 기타 상담은 메신저를 통해 가능합니다."} 

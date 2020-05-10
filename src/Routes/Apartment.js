@@ -35,6 +35,7 @@ const Section = styled.section`
         }
     }
     @media only screen and (max-width: 780px) { 
+        margin-top: 100px;   
         width: 88%; 
         margin-left: 6%;       
         & h3{
@@ -55,6 +56,12 @@ const OptionInfo = styled.div`
     img {
         width: 60%;
         margin: 20px 20%;
+    } 
+    @media only screen and (max-width: 780px) {      
+        img {
+            width: 90%;
+            margin: 20px 5%;
+        }
     }
 `
 
@@ -93,9 +100,9 @@ function Apartment(){
                 <Rooms/>
                     <OptionInfo>
                         <h4>옵션</h4>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed.png`} alt="옵션이미지"/>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-bed.png` : `${process.env.REACT_APP_IMG}images/img-option-bed-mobile.png`} alt="옵션이미지"/>
                         <h4>보안 시설</h4>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-security.png`} alt="보안이미지"/>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="보안이미지"/>
                     </OptionInfo>
                     <RoomImg>
                         <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-1.jpg`} alt="침대있는 원룸 이미지1"/>

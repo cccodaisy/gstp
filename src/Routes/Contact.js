@@ -31,9 +31,9 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
-    @media only screen and (max-width: 780px) {      
+    @media only screen and (max-width: 780px) {  
         & h3{
-            font-size: 2em;
+            font-size: 1.8em;
         }
     }
 `;
@@ -44,6 +44,7 @@ const Contacts = styled.div`
     padding: 3% 17%;
     @media only screen and (max-width: 780px) { 
         flex-direction: column;
+        padding: 3% 0;
     }
 `;
 
@@ -98,9 +99,9 @@ function Contact(){
     })
     return (
         <>
-            <Sns/>
+            <Sns marginTop={window.innerWidth > 780 ? '' : '100px'}/>
             <Section>
-                <h3>태학관 이메일 &amp;소셜미디어</h3>
+                <h3>태학관 이메일 &amp; 소셜미디어</h3>
                 <Contacts>
                     <Social>
                         <img src={MAIL} alt="mail"/>

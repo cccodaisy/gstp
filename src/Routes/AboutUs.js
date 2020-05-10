@@ -48,7 +48,8 @@ const Section = styled.section`
             }
         }
     }
-    @media only screen and (max-width: 780px) {      
+    @media only screen and (max-width: 780px) {
+        margin-top: 100px;   
         & h3{
             font-size: 2em;
             margin:  10% auto;

@@ -24,6 +24,7 @@ const Infos = styled.div`
 
 const Logo = styled.div`
     flex: 1;
+    text-align: center;
     @media only screen and (max-width: 780px) {
         display: none;
     }
@@ -69,6 +70,14 @@ const Item = styled.li`
     &:last-child{
         border-right: unset;
     }
+    @media only screen and (max-width: 780px) {  
+        font-size: 1.1em;    
+        flex-direction: column;
+        padding: 0 15px 0 0;
+        &:nth-child(2){
+            padding-left: 15px;
+        }
+    }
 `;
 
 const SnsLinks = styled.li`
@@ -78,6 +87,7 @@ const SnsLinks = styled.li`
     flex-direction: row;
     @media only screen and (max-width: 780px) {      
         flex-direction: column;
+        padding: 0;
     }
 `;
 
@@ -93,37 +103,47 @@ const SnsLink = styled.div`
         }
     }
     @media only screen and (max-width: 780px) {      
+        font-size: 1.1em;
         margin-bottom: 23px;
     }
 `;
 
 const SLink = styled(Link)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2em;
-    &.left{
-        align-items: left;
-        justify-content: left;
-    }
-    & span{
-        color: #acacac;
-        padding-left: 10px;
-        &:hover{
-            color: white;
-        }
-    }
     transition: color 0.3s linear;
     &:hover{
         text-decoration: underline;
     }
+    &.nohover{
+        &:hover{
+            text-decoration: none;
+        }
+    }
+    @media only screen and (max-width: 780px) {  
+        font-size: 1.1em;
+    }
 `;
 
-export default withRouter (({ location: {pathname }}) => (
+const DLink = styled(Link)`
+    & span:hover{
+        color: white;
+    }
+    & span{
+        color: #acacac;
+        padding-left: 10px;
+    }
+    @media only screen and (max-width: 780px) { 
+        & span{
+            font-size: 0.85em;
+        }
+    }
+`;
+
+export default withRouter (() => (
     <Footer>
         <Infos>
             <Logo>
-                <SLink to="/" className='left'><img src={LOGO_FT} width="140" height="170" alt="태학관로고"/></SLink>
+                <SLink to="/"><img src={LOGO_FT} width="110" height="auto" alt="태학관로고"/></SLink>
             </Logo>
             <Lists>
                 <List>
@@ -134,11 +154,12 @@ export default withRouter (({ location: {pathname }}) => (
                         <SLink to="/apartment/bed">Apartment Type</SLink>
                     </Item>
                     <Item>
-                        <SLink>
+                        <SLink className='nohover' to="/facility/lounge">
                             Facilities 
-                            <Link to="/facility/lounge"><span>공유 라운지</span></Link>
-                            <Link to="/facility/surround"><span>/ 태학관 주변 시설 안내</span></Link>
                         </SLink>
+                        <DLink to="/facility/lounge"><span>공유 라운지</span></DLink>
+                        <span style={{marginLeft: '8px'}}>/</span>
+                        <DLink to="/facility/surround"><span>태학관 주변 시설 안내</span></DLink>
                     </Item>
                     <Item>
                         <SLink to="/contact">Contact &amp; Location</SLink>

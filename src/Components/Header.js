@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import LOGO from "images/logo-thg-d.png";
+import Sidebar from "react-sidebar";
 
 const Header = styled.header`
     color: white;
@@ -9,10 +10,15 @@ const Header = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    background-color:  ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
+    background-color: ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
     z-index: 10;
     transition: all 0.5s ease-in-out;
-    color: white;
+    @media only screen and (max-width: 780px) {
+        height: ${props => props.isMenuOpen === true ? '100%' : '100px'};
+        position: fixed;
+        background-color: 
+        ${props => props.current === '/' ? (props.bgColor ? props.bgColor : 'transparent') : props.isMenuOpen === true ? 'transparent' : '#4d4d4d'}
+    }
 `;
 
 const Inner = styled.div`
@@ -23,20 +29,21 @@ const Inner = styled.div`
     display: flex;
     align-items: center;
     transition: all 0.5s ease-in-out;
-    @media only screen and (max-width: 780px) {
-        
-    }
 `;
 
 const Logo = styled.div`
     display: block;
     position: absolute;
     left: 10px;
-    top: 25px;
+    top: 33px;
     width: 100px;
     height: 100px;
     @media only screen and (max-width: 780px) {
         left: 5%;
+        top: 15px;
+        width: 70px;
+        height: 70px;
+        z-index: 10;
     }
 `;
 
@@ -45,7 +52,12 @@ const List = styled.ul`
     flex: 4;
     display: block;
     margin-top: -7px;
-
+    @media only screen and (max-width: 780px) {
+        flex: 1;
+        display: flex;
+        flex-flow: column wrap;
+        margin: 40% 10% 0 10%; 
+    }
 `;
 
 const Item = styled.li`
@@ -68,10 +80,16 @@ const Item = styled.li`
     }
     &:hover {
         border-bottom: 3px solid #ffff25;
+        & div{
+            display: block;
+            transition: display 1s linear;
+        }
     }
-    &:hover > div{
-        display: block;
-        transition: display 1s linear;
+    @media only screen and (max-width: 780px) {
+        position: unset;
+        margin: 0;
+        padding: 0 5px;
+        border-bottom: 1px solid white;
     }
 `;
 
@@ -86,10 +104,19 @@ const SLink = styled(Link)`
         background-size: auto 85px;
     }
     & > span{
-        margin: 0 0 0 15px;
+        margin: 9px 0 0 9px;
         border-style:solid; 
         border-width: 6px;
         border-color:  white transparent transparent transparent;
+    }
+
+    @media only screen and (max-width: 780px) {
+        height: 60px;
+        align-items: left;
+        justify-content: left;
+        &.home{
+            background-size: auto 65px;
+        }
     }
 `;
 
@@ -99,6 +126,11 @@ const Deps = styled.div`
     display: none;
     top: 65px;
     left: 0;
+    @media only screen and (max-width: 780px) {
+        position: unset;
+        display: block;
+        margin-top: -5px;
+    }
 `
 const DLink = styled(Link)`
     width: 150px;
@@ -113,41 +145,215 @@ const DLink = styled(Link)`
     &:last-child{
         border-bottom: unset;
     }
+    &:hover{
+        background-color: #c9c9c9;
+    }
+    @media only screen and (max-width: 780px) {
+        width: 100%;
+        height: 30px;
+        text-align: left;
+        background-color: unset;
+        color: #c9c9c9;
+        border-bottom: unset;
+        font-size: 1.1em;
+        &:hover{
+            background-color: unset;
+            color: #f5f5f5;
+        }
+    }
 `;
 
+const Hamburger = styled.div`
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    z-index: 11;
+    
+    & span {
+        display: block;
+        margin: 7px auto;
+        background-color: white;
+        width: 100%;
+        height: 3px;
+        border-radius: 5px;
+        transition: all .5s ease;
+    }
+    
+    &:hover {
+        & span:first-child{
+        transform: translateY(-3px);
+        }
 
-export default withRouter (
-    ({ location: { pathname }}) => (
-    <Header current={ pathname }>
-        <Inner>
+        & span:last-child{
+        transform: translateY(3px);
+        }
+    }
+
+    &.opened {
+        & span:first-child{
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        & span:nth-child(2) {
+            transform: scaleX(0);
+        }
+        
+        & span:last-child{
+            transform: translateY(-10px) rotate(-45deg);
+        }
+    }
+`
+
+class HeaderWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            isMenuOpen: false,
+            windowWidth: window.innerWidth,
+            bgColor: ''
+        }
+      }
+
+    toggleMenu = () => {
+        const {isMenuOpen} = this.state;
+        this.setState(state => {
+            return {
+                isMenuOpen: !state.isMenuOpen
+            }
+        })
+        if(isMenuOpen === false){
+            this.setState({
+                bgColor: 'transparent'
+            })
+        }
+        // console.log(this.state.isMenuOpen)
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.location.pathname !== prevProps.location.pathname) {
+            this.setState({
+                isMenuOpen: false
+            })
+        }
+    }
+    isBottom(el) {
+        return el.getBoundingClientRect().bottom <= window.innerHeight;
+    }
+    componentDidMount() {
+        document.addEventListener('scroll', this.trackScrolling);
+    }
+      
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+    }
+      
+    trackScrolling = () => {
+        const wrappedElement = document.getElementById('root');
+        // console.log(wrappedElement.getBoundingClientRect().top)
+        if(wrappedElement.getBoundingClientRect().top < -150){
+            this.setState({
+                bgColor: '#4d4d4d'
+            })
+        } else{
+            this.setState({
+                bgColor: 'transparent'
+            })
+        }
+    };
+
+    render() {
+        const { location : { pathname }} = this.props;
+        const { isMenuOpen, windowWidth, bgColor } = this.state;
+        // console.log(this.state);
+        return(
+        windowWidth > 780 ? 
+        <Header current={ pathname } >
+            <Inner>
+                <Logo>
+                    <SLink to="/" className="home" style={{height: "85px"}}></SLink>
+                </Logo>
+                <List>
+                    <Item current={ pathname === "/language" }>
+                        <SLink style={{width: '130px'}} to="/kr">Language<span></span></SLink>
+                        <Deps>
+                            <DLink to="/kr" >한국어</DLink>
+                            <DLink to="/eng" >English</DLink>
+                        </Deps>
+                    </Item>
+                    <Item current={ pathname === "/contact" }>
+                        <SLink to="/contact">Contact &amp; Location</SLink>
+                    </Item>
+                    <Item current={ pathname.includes("/facility") }>
+                        <SLink style={{width: '130px'}} to="/facility/lounge">Facilities<span></span></SLink>
+                        <Deps>
+                            <DLink to="/facility/lounge">공유 라운지</DLink>
+                            <DLink to="/facility/surround">주변 시설</DLink>
+                        </Deps>
+                    </Item>
+                    <Item current={ pathname.includes('/apartment') }>
+                        <SLink to="/apartment/bed">Apartment Type</SLink>
+                    </Item>
+                    <Item current={ pathname === "/aboutus" }>
+                        <SLink to="/aboutus">AboutUs</SLink>
+                    </Item>
+                </List>
+            </Inner>
+        </Header> 
+        :
+        <Header isMenuOpen={isMenuOpen} current={ pathname } bgColor={bgColor}>
             <Logo>
-                <SLink to="/" className="home" style={{height: "85px"}}></SLink>
+                <SLink to="/" className="home" style={{height: "65px"}}></SLink>
             </Logo>
-            <List>
-                <Item current={ pathname === "/language" }>
-                    <SLink style={{width: '130px'}}>Language<span></span></SLink>
-                    <Deps>
-                        <DLink to="/kr" >한국어</DLink>
-                        <DLink to="/eng" >English</DLink>
-                    </Deps>
-                </Item>
-                <Item current={ pathname === "/contact" }>
-                    <SLink to="/contact">Contact &amp; Location</SLink>
-                </Item>
-                <Item current={ pathname.includes("/facility") }>
-                    <SLink style={{width: '130px'}}>Facilities<span></span></SLink>
-                    <Deps>
-                        <DLink to="/facility/lounge">공유 라운지</DLink>
-                        <DLink to="/facility/surround">주변 시설</DLink>
-                    </Deps>
-                </Item>
-                <Item current={ pathname.includes('/apartment') }>
-                    <SLink to="/apartment/bed">Apartment Type</SLink>
-                </Item>
-                <Item current={ pathname === "/aboutus" }>
-                    <SLink to="/aboutus">AboutUs</SLink>
-                </Item>
-            </List>
-        </Inner>
-    </Header>
-))
+            <Sidebar 
+                pullRight={true}
+                sidebar={
+                    <List>
+                        <Item current={ pathname === "/aboutus" }>
+                            <SLink to="/aboutus">AboutUs</SLink>
+                        </Item>
+                        <Item current={ pathname.includes('/apartment') }>
+                            <SLink to="/apartment/bed">Apartment Type</SLink>
+                        </Item>
+                        <Item current={ pathname.includes("/facility") } style={{height: '130px'}}>
+                            <SLink to="/facility/lounge">Facilities</SLink>
+                            <Deps>
+                                <DLink to="/facility/lounge">공유 라운지</DLink>
+                                <DLink to="/facility/surround">주변 시설</DLink>
+                            </Deps>
+                        </Item>
+                        <Item current={ pathname === "/contact" }>
+                            <SLink to="/contact">Contact &amp; Location</SLink>
+                        </Item>
+                        <Item current={ pathname === "/language" } style={{height: '130px'}}>
+                            <SLink to="/kr" >Language</SLink>
+                            <Deps>
+                                <DLink to="/kr" >한국어</DLink>
+                                <DLink to="/eng" >English</DLink>
+                            </Deps>
+                        </Item>
+                    </List>
+                }
+                open={isMenuOpen}
+                onSetOpen={this.toggleMenu}
+                styles={{ 
+                    sidebar: {
+                        background: "#4d4d4d",
+                        width: "70%"
+                    } 
+                }}
+                >
+                <Hamburger onClick={()=> this.toggleMenu()} 
+                    className={isMenuOpen === true ? 'opened':''}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </Hamburger>
+            </Sidebar>
+        </Header>
+        )
+    }
+}
+
+export default withRouter(HeaderWrapper);

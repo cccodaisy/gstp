@@ -9,6 +9,9 @@ const Section = styled.section`
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
+    @media only screen and (max-width: 780px) {
+        padding: 30px 0;
+    }
 `;
 
 const Inner = styled.div`
@@ -33,9 +36,11 @@ const Inner = styled.div`
         & > div{
             float: unset;
             width: 100%;
-            height: 400px;
+            height: 360px;
         }
         & .map{
+            background-position: center top;
+            background-size: 100%;
             top: 0;
             width: 100%;
             height: 360px;
@@ -60,8 +65,8 @@ const AddressInfo = styled.div`
     & div{
         line-height: 1.67;
         text-align: left;
-        width: 70%;
-        margin: 0 15%;
+        width: 74%;
+        margin: 0 13%;
         span{
             font-weight: bold;
         }
@@ -82,12 +87,13 @@ const AddressInfo = styled.div`
         }
     }
     @media only screen and (max-width: 780px) {   
-        font-size: 1.1em;   
+        font-size: 1.1em; 
+        margin-top: 100%;  
         & h3{
             font-size: 1.6em;
             width: 100%;
             text-align: center;
-            margin 105% auto 15% auto;
+            margin 10% auto;
         }
         & div{
             text-align: center;
