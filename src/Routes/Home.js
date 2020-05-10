@@ -195,7 +195,6 @@ const RoomInfo = styled.div`
         width: 80%;
         margin: 16% 10% 6% 10%;
         font-weight: bold;
-        margin-bottom: 70px;
     }
     & div{
         line-height: 1.67;
