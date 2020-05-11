@@ -14,10 +14,10 @@ const Header = styled.header`
     z-index: 10;
     transition: all 0.5s ease-in-out;
     @media only screen and (max-width: 780px) {
-        height: ${props => props.isMenuOpen === true ? '100%' : '100px'};
+        height: ${props => props.isMenuOpen === true ? '100%' : '72px'};
         position: fixed;
         background-color: 
-        ${props => props.current === '/' ? (props.bgColor ? props.bgColor : 'transparent') : props.isMenuOpen === true ? 'transparent' : '#4d4d4d'}
+        ${props => props.current === '/' ? (props.bgColor ? props.bgColor : 'transparent') : props.isMenuOpen === true ? 'transparent' : (props.bgColor ? props.bgColor : '#4d4d4d')}
     }
 `;
 
@@ -41,8 +41,8 @@ const Logo = styled.div`
     @media only screen and (max-width: 780px) {
         left: 5%;
         top: 15px;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         z-index: 10;
     }
 `;
@@ -111,11 +111,11 @@ const SLink = styled(Link)`
     }
 
     @media only screen and (max-width: 780px) {
-        height: 60px;
+        height: 55px;
         align-items: left;
         justify-content: left;
         &.home{
-            background-size: auto 65px;
+            background-size: auto 45px;
         }
     }
 `;
@@ -168,7 +168,7 @@ const Hamburger = styled.div`
     height: 25px;
     position: absolute;
     right: 20px;
-    top: 30px;
+    top: 18px;
     z-index: 11;
     
     & span {
@@ -233,7 +233,8 @@ class HeaderWrapper extends React.Component {
     componentDidUpdate(prevProps) {
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.setState({
-                isMenuOpen: false
+                isMenuOpen: false,
+                bgColor: this.props.location.pathname === '/' ? 'transparent' : '#4d4d4d'
             })
         }
     }
@@ -268,7 +269,7 @@ class HeaderWrapper extends React.Component {
         } 
         else{
             this.setState({
-                bgColor: 'transparent'
+                bgColor: this.props.location.pathname === '/' ? 'transparent' : '#4d4d4d'
             })
         }
     };
@@ -299,7 +300,7 @@ class HeaderWrapper extends React.Component {
                         <SLink style={{width: '130px'}} to="/facility/lounge">Facilities<span></span></SLink>
                         <Deps>
                             <DLink to="/facility/lounge">공유 라운지</DLink>
-                            <DLink to="/facility/surround">주변 시설</DLink>
+                            <DLink to="/facility/nearby">주변 시설</DLink>
                         </Deps>
                     </Item>
                     <Item current={ pathname.includes('/apartment') }>
@@ -314,7 +315,7 @@ class HeaderWrapper extends React.Component {
         :
         <Header isMenuOpen={isMenuOpen} current={ pathname } bgColor={bgColor}>
             <Logo>
-                <SLink to="/" className="home" style={{height: "65px"}}></SLink>
+                <SLink to="/" className="home" style={{height: "60px"}}></SLink>
             </Logo>
             <Sidebar 
                 pullRight={true}
@@ -330,7 +331,7 @@ class HeaderWrapper extends React.Component {
                             <SLink to="/facility/lounge">Facilities</SLink>
                             <Deps>
                                 <DLink to="/facility/lounge">공유 라운지</DLink>
-                                <DLink to="/facility/surround">주변 시설</DLink>
+                                <DLink to="/facility/nearby">주변 시설</DLink>
                             </Deps>
                         </Item>
                         <Item current={ pathname === "/contact" }>
@@ -362,7 +363,7 @@ class HeaderWrapper extends React.Component {
                         WebkitOverflowScrolling: "touch",
                         transition: "left .3s ease-out, right .3s ease-out",
                         zIndex: 2,
-                        height: '100px'
+                        height: '72px'
                     }
                 }}
                 >

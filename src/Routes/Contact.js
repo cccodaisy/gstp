@@ -48,7 +48,7 @@ const Contacts = styled.div`
     }
 `;
 
-const Social = styled.div`
+const Social = styled.a`
     flex: 1;
     display: flex;
     flex-flow: column wrap;
@@ -71,7 +71,7 @@ const Snsid = styled.div`
     }
 `;
 
-const Connect = styled.a`
+const Connect = styled.div`
     padding: 15px 20px; 
     color: #4d4d4d;
     font-size: 1.3em;
@@ -99,26 +99,26 @@ function Contact(){
             <Section>
                 <h3>태학관 이메일 &amp; 소셜미디어</h3>
                 <Contacts>
-                    <Social>
+                    <Social href="mailto:taehakgwan@gmail.com" target="blank">
                         <img src={MAIL} alt="mail"/>
                         <Snsid>
                             Email | <span>taehakgwan@gmail.com</span>
                         </Snsid>
-                        <Connect href="mailto:taehakgwan@gmail.com" target="blank">이메일 보내기 </Connect>
+                        <Connect>이메일 보내기 </Connect>
                     </Social>
-                    <Social>
+                    <Social href="https://www.instagram.com/taehakgwan/" target="blank">
                         <img src={INSTAGRAM} alt="instagram"/>
                         <Snsid>
                             Instagram | <span>@taehakgwan</span>
                         </Snsid>
-                        <Connect href="https://www.instagram.com/taehakgwan/" target="blank">인스타그램 방문하기</Connect>
+                        <Connect>인스타그램 방문하기</Connect>
                     </Social>
-                    <Social>
+                    <Social href="https://www.facebook.com/THG.House/" target="blank">
                         <img src={FACEBOOK} alt="facebook"/>
                         <Snsid>
                             Facebook | <span>@THG.house</span>
                         </Snsid>
-                        <Connect href="https://www.facebook.com/THG.House/" target="blank">페이스북 방문하기</Connect>
+                        <Connect>페이스북 방문하기</Connect>
                     </Social>
                 </Contacts>
             </Section>

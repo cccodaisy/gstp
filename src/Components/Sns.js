@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import KAKAO_LOGO from "images/img-kakaotalk-logo.png"
 import WECHAT_LOGO from "images/img-wechat-logo.png"
@@ -55,7 +56,7 @@ const Contacts = styled.div`
     }
 `;
 
-const Social = styled.div`
+const Social = styled.a`
     flex: 1;
     display: flex;
     flex-flow: column wrap;
@@ -87,7 +88,7 @@ const Snsid = styled.div`
     }
 `;
 
-const Connect = styled.a`
+const Connect = styled.div`
     padding: 15px 20px; 
     color: #4d4d4d;
     font-size: 1.3em;
@@ -112,19 +113,19 @@ const Sns = (props) => (
             <br/>{props.snsText2 ?? null}
         </p>
         <Contacts>
-            <Social>
+            <Social href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-" target="blank">
                 <img src={KAKAO_LOGO} alt="kakao"/>
                 <Snsid>
                     Kakao Plus | <span>GDTHG7</span>
                 </Snsid>
-                <Connect href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-" target="blank">카카오톡으로 상담하기</Connect>
+                <Connect>카카오톡으로 상담하기</Connect>
             </Social>
-            <Social>
+            <Social href="https://u.wechat.com/IO3zvzL5iQEi11-nqjxJFEM" target="blank">
                 <img src={WECHAT_LOGO} alt="wechat" />
                 <Snsid>
                     WeChat | <span>GDTHG7</span>
                 </Snsid>
-                <Connect href="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-" target="blank">위챗으로 상담하기</Connect>
+                <Connect>위챗으로 상담하기</Connect>
             </Social>
         </Contacts>
     </Section>

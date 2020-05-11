@@ -159,7 +159,7 @@ export default withRouter (() => (
                         </SLink>
                         <DLink to="/facility/lounge"><span>공유 라운지</span></DLink>
                         <span style={{marginLeft: '8px'}}>/</span>
-                        <DLink to="/facility/surround"><span>태학관 주변 시설 안내</span></DLink>
+                        <DLink to="/facility/nearby"><span>태학관 주변 시설 안내</span></DLink>
                     </Item>
                     <Item>
                         <SLink to="/contact">Contact &amp; Location</SLink>

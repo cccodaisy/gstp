@@ -30,7 +30,7 @@ const Fade = keyframes`
   }
 `;
 
-const Moving = keyframes`
+const MobileMoving = keyframes`
   0% {
     opacity: 0;
     transform: translateY(-50px) translateX(-50%);
@@ -38,6 +38,17 @@ const Moving = keyframes`
   100% {
     opacity: 1;
     transform: translateY(0) translateX(-50%);
+  }
+`;
+
+const Moving = keyframes`
+  0% {
+    opacity: 0;
+    margin-bottom: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 0;
   }
 `;
 
@@ -109,6 +120,7 @@ const Inner = styled.div`
       top: 63%;
       width: 80%;
       transform:translateX(-50%);
+      animation: ${MobileMoving} 1.5s ease-in-out;
     }
     & > img{
       display: block;
@@ -339,7 +351,7 @@ class Home extends React.Component {
             <Slider {...settings}>
               <Slide
                 bgImg='images/banner-1.jpg'
-                href='/facility'
+                href='/facility/lounge'
                 title='함께 사용하는 공유 라운지'
                 desc='공유 라운지는 태학관 모든 사람과 공유되는 공간으로 자유롭게 24시간 사용가능합니다. 자연스럽게 함께 사는 사람들과 소통하고 교류하며 이웃을 알 수 있습니다. 공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다.'
               />
@@ -351,7 +363,7 @@ class Home extends React.Component {
               />
               <Slide
                 bgImg='images/banner-3.jpg'
-                href='facility'
+                href='/facility/nearby'
                 title='서울 둘레길'
                 desc={this.state.windowWidth > 780 ? `서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 '서울 둘레길 제 5구간'으로 되어져 있습니다.
                   태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관, 

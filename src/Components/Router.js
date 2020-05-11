@@ -22,7 +22,7 @@ export default () => (
                 <Route path="/apartment/bed" exact component={Apartment} />
                 <Route path="/apartment/nobed" component={Apartment2} />
                 <Route path="/facility/lounge" component={Facility} />
-                <Route path="/facility/surround" component={Facility2} />
+                <Route path="/facility/nearby" component={Facility2} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/language" component={Language} />
                 <Redirect from="*" to="/" />
