@@ -95,34 +95,34 @@ function Contact(){
     })
     return (
         <>
-            <Sns marginTop={window.innerWidth > 780 ? '' : '100px'} lang='kr'/>
+            <Sns marginTop={window.innerWidth > 780 ? '' : '100px'} lang='en'/>
             <Section>
-                <h3>태학관 이메일 &amp; 소셜미디어</h3>
+                <h3>Our email &amp; Social Media</h3>
                 <Contacts>
                     <Social href="mailto:taehakgwan@gmail.com" target="blank">
                         <img src={MAIL} alt="mail"/>
                         <Snsid>
                             Email | <span>taehakgwan@gmail.com</span>
                         </Snsid>
-                        <Connect>이메일 보내기 </Connect>
+                        <Connect>Send us an email </Connect>
                     </Social>
                     <Social href="https://www.instagram.com/taehakgwan/" target="blank">
                         <img src={INSTAGRAM} alt="instagram"/>
                         <Snsid>
                             Instagram | <span>@taehakgwan</span>
                         </Snsid>
-                        <Connect>인스타그램 방문하기</Connect>
+                        <Connect>Visit us on Instagram</Connect>
                     </Social>
                     <Social href="https://www.facebook.com/THG.House/" target="blank">
                         <img src={FACEBOOK} alt="facebook"/>
                         <Snsid>
                             Facebook | <span>@THG.house</span>
                         </Snsid>
-                        <Connect>페이스북 방문하기</Connect>
+                        <Connect>Visit us on Facebook</Connect>
                     </Social>
                 </Contacts>
             </Section>
-            <Location lang='kr'/>
+            <Location/>
         </>
     );
 }

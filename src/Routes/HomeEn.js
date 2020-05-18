@@ -107,7 +107,7 @@ const Inner = styled.div`
       margin: 0 auto;
       width: 250px;
       left: 50%;
-      top: 50%;
+      top: 40%;
       bottom: unset;
       transform:translateX(-50%);
       line-height: 3.4;
@@ -118,7 +118,7 @@ const Inner = styled.div`
       line-height: 1.3;
       padding-bottom: 40px;
       left: 50%;
-      top: 63%;
+      top: 53%;
       width: 80%;
       transform:translateX(-50%);
       animation: ${MobileMoving} 1.5s ease-in-out;
@@ -271,7 +271,7 @@ const Slide = (props) => (
         {props.desc}
       </div>
       <a href={props.href}>
-        <span className="more">더보기 > </span>
+        <span className="more">To see more > </span>
       </a>
     </RoomInfo>
   </>
@@ -337,14 +337,14 @@ class Home extends React.Component {
     return (
       <>
         <Section>
-          <h1>태학관</h1>
+          <h1>Taehakgwan</h1>
           <Inner>
             <div className="textbox">Taehakgwan House</div>
             {this.state.windowWidth > 780 ? 
-            <h2>태학관은 다양한 국적의 <br />사람들이 모여사는 개인 원룸형<br/> 주거 공간입니다.</h2> 
+            <h2>Taehakgwan offers housing for people all over the world where they get to reside in private apartments.</h2> 
             : 
-            <h2>태학관은 다양한 국적의 사람들이 모여사는 개인 원룸형 주거 공간입니다.</h2>}
-            <img src={ARROW_D} alt='아래화살표'/>
+            <h2>Taehakgwan offers housing for people all over the world where they get to reside in private apartments.</h2>}
+            <img src={ARROW_D} alt='arrow_down'/>
           </Inner>
         </Section>
         <SlideContainer>
@@ -353,34 +353,34 @@ class Home extends React.Component {
               <Slide
                 bgImg='images/banner-1.jpg'
                 href='/facility/lounge'
-                title='함께 사용하는 공유 라운지'
-                desc='공유 라운지는 태학관 모든 사람과 공유되는 공간으로 자유롭게 24시간 사용가능합니다. 자연스럽게 함께 사는 사람들과 소통하고 교류하며 이웃을 알 수 있습니다. 공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다.'
+                title='The common area for everyone'
+                desc={this.state.windowWidth > 780 ? 
+                  "The common area is shared by all members of Taehakgwan and is available 24/7.  It is where residents can relax and have fun. You can engage and get to know the other residents and participate in various community programs at Taehakgwan's common area."
+                   :
+                "The common area is shared by all members of Taehakgwan and is available 24/7.  It is where residents can relax and have fun. You can engage and get to know..."}
               />
               <Slide
                 bgImg='images/banner-2.jpg'
                 href='/apartment/bed'
-                title='원룸 타입별 안내'
-                desc='태학관의 원룸은 기본 옵션이 냉장고, 세탁기, 전기인덕션, 부엌싱크대, 책상, 의자, 서재, 에어콘, 개인용 화장실과 샤워실(세면대)가 제공됩니다. 여러개의 원룸은 타입이 크게 두가지로 침대가 있는 원룸, 없는 원룸으로 나뉘어집니다. '
+                title='Types of apartments'
+                desc={this.state.windowWidth > 780 ? 'At Taehakgwan, each studio apartment comes with a personal bathroom including a sink and a shower booth. Additionally, every resident will get a refrigerator, washing machine, induction stove top, kitchen sink, desk, chair and air conditioner in their studio. You can decide to stay in either a studio...' 
+                : 'At Taehakgwan, each studio apartment comes with a personal bathroom including a sink and a shower booth. Additionally, every resident will get...'}
               />
               <Slide
                 bgImg='images/banner-3.jpg'
                 href='/facility/nearby'
-                title='서울 둘레길'
-                desc={this.state.windowWidth > 780 ? `서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 '서울 둘레길 제 5구간'으로 되어져 있습니다.
-                  태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관, 
-                  여러 체육시설(헬스장, 베트민턴장), 족구장, 국궁장, 조선 시대 유적 무덤, 한강과 여의도가 보이는 돌바위...` 
+                title='The Seoul Trail'
+                desc={this.state.windowWidth > 780 ? `The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. Taehakgwan is close to the 5th section of the Seoul trail and is only 5 minutes by walking. Facilities near this section of the trail include a mountain library, outdoor gym areas, historical sites, Samsungsan... ` 
                   : 
-                  `서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 '서울 둘레길 제 5구간'으로 되어져 있습니다.
-                  태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관, 
-                  여러 체육시설(헬스장, 베트민턴장)...`
+                  `The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. Taehakgwan is close to...`
                 }
               />
             </Slider>
           </Inner>
         </SlideContainer>
         {/* <Slider/> */}
-        <Sns snsText="입주 문의 및 기타 상담은 카카오톡과 위챗앱을 통해서 가능합니다." lang='kr' />
-        <Location lang='kr'/>
+        <Sns lang='en'/>
+        <Location lang='en' />
       </>
     );
   }

@@ -151,61 +151,56 @@ function Facility2(){
     return (
         <>
             <Section>
-                <h3>태학관 주변 시설 안내</h3>
+                <h3>Places to see nearby</h3>
                 <div className="inner">
                     <DetailInfo>
-                        <h4>1.서울 둘레길 (도보 5분)</h4>
+                        <h4>1. Seoul trail (5 minutes on foot)</h4>
                         {window.innerWidth > 780 ? 
                             <p>
-                                서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 ‘서울 둘레길 제 5구간’으로 되어져 있습니다. <br/>
-                                태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. 태학관 인근 서울둘레길 명소로는 숲속의 도서관,  <br/>
-                                여러 체육시설(헬스장, 베트민턴장), 족구장, 국궁장, 조선 시대 유적 무덤, 한강과 여의도가 보이는 돌바위 view point,  <br/>
-                                불교 사찰인(보덕사, 약수사, 호암사) 절터와 자작나무 유아 숲 체험 교실터, 천주교 삼성산 성지순례길  <br/>
-                                (조선 말 3인의 프랑스 선교사 무덤 유적지) 등이 있습니다. 도심속에서 숲속의 자연을 체험할 수 있는  <br/>
-                                힐링의 숲 공원이 인접해 있습니다. 
+                                The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. 
+                                Taehakgwan is close to the 5th section of the Seoul trail and is only 5 minutes by walking. 
+                                Facilities near this section of the trail include a mountain library, outdoor gym areas, historical sites, 
+                                Samsungsan pilgrimage route and a few temples (Bodeok-sa, Yaksu-sa, Hoam-sa) and a great viewpoint to oversee 
+                                Seoul's skyline. It is the perfect spot to relax out in nature, away from the hustle and bustle of the city.
                             </p>
                             : 
                             <p>
-                                서울시에서 조성한 숲속의 산책공원 루트 입니다. 저희 지역은 ‘서울 둘레길 제 5구간’으로 되어져 
-                                있습니다. 태학관에서 걸어서 5분이면 바로 연결되어져 있습니다. <br/>
-                                태학관 인근 서울둘레길 명소로는 숲속의 도서관,  여러 체육시설(헬스장, 베트민턴장), 족구장, 국궁장, 조선 시대 유적 
-                                무덤, 한강과 여의도가 보이는 돌바위 view point,  불교 사찰인(보덕사, 약수사, 호암사) 
-                                절터와 자작나무 유아 숲 체험 교실터, 천주교 삼성산 성지순례길  (조선 말 3인의 프랑스 선교사 무덤 유적지) 등이 있습니다. 
-                                도심속에서 숲속의 자연을 체험할 수 있는  힐링의 숲 공원이 인접해 있습니다. 
+                                The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. <br/>
+                                Taehakgwan is close to the 5th section of the Seoul trail and is only 5 minutes by walking. Facilities near this section of the trail include a mountain library, outdoor gym areas, historical sites, Samsungsan pilgrimage route and a few temples (Bodeok-sa, Yaksu-sa, Hoam-sa) and a great viewpoint to oversee Seoul's skyline. It is the perfect spot to relax out in nature, away from the hustle and bustle of the city.
                             </p>
                         }
                         <DetailImg>
-                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-1.jpg`} alt="둘레길 이미지1"/>
-                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-2.jpg`} alt="둘레길 이미지2"/>
-                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-3.jpg`} alt="둘레길 이미지3"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-1.jpg`} alt="facilities1"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-2.jpg`} alt="facilities2"/>
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-3.jpg`} alt="facilities3"/>
                         </DetailImg>
                     </DetailInfo>
                     <ShortInfo>
                         <div className='textbox'>
-                            <h4>2. 서울대학교 (도보 15분)</h4>
+                            <h4>2. Seoul National University (15 minutes on foot)</h4>
                             <p>
-                            한국을 대표하는 명실 상부한 대학교 캠퍼스가 자리 하고 있습니다. 가까운 거리에
-                            서울대학교가 있어 접근성이 좋습니다. 
+                            Seoul National University (SNU) is one of the most prestigious and well renowned universities in Korea.<br/>
+                            The SNU campus is easy to get to from Taehakgwan.
                             </p>
                         </div>
                         <div>
-                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-4.jpg`} alt="서울대 이미지" />
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-4.jpg`} alt="facilities4" />
                         </div>
                     </ShortInfo>
                     <ShortInfo>
                         <div>
-                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-5.jpg`} alt="도림천길 이미지" />
+                            <img src={`${process.env.REACT_APP_IMG}images/img-facilities-5.jpg`} alt="facilities5" />
                         </div>
                         <div className='textbox'>
-                            <h4>3. 도림천 산책 &amp; 자전거길 (도보 7분)</h4>
+                            <h4>3. Dorim-cheon stream &amp; Bike path ( 7 minutes on foot )</h4>
                             <p>
-                            자전거 전용도로가 설치 되어져 있습니다. 저희 마을에서 여의도 한강으로 연결이 될 수 있는 자전거 전용도로가 조성 되어져 있습니다. 마을 주민들의 조깅과 산책로도 각광을 받고 있습니다.
+                            Dorim-cheon stream is a river in Seoul that is known for cyclist-friendly roads that are near Taehakgwan. Additionally, there is a bike lane from our residence that will eventually take you to the Han river. <br/>It is the perfect spot to jog or to go on a walk.
                             </p>
                         </div>
                     </ShortInfo>
                 </div>
             </Section>
-            <Sns lang='kr' />
+            <Sns lang='en'/>
         </>
     );
 }

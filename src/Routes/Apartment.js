@@ -115,7 +115,7 @@ function Apartment(){
                     </RoomImg>
                 </div>
             </Section>
-            <Sns snsText="원룸의 사이즈와 가구배치는 각 원룸 마다 차이가 있을 수 있습니다."
+            <Sns lang='kr' snsText="원룸의 사이즈와 가구배치는 각 원룸 마다 차이가 있을 수 있습니다."
             snsText2="자세한 입주 문의 및 기타 상담은 메신저를 통해 가능합니다." />
         </>
     );

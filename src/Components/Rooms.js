@@ -48,11 +48,22 @@ const SLink = styled(Link)`
 
 export default withRouter (({ location: { pathname }}) => (
     <List>
-        <Item current={ pathname === "/apartment/bed" }>
-            <SLink to="/apartment/bed">침대가 있는 원룸</SLink>
+        <Item current={ pathname === "/kr/apartment/bed" || pathname === "/en/apartment/bed"}>
+            <SLink to={pathname.includes('kr') ? '/kr/apartment/bed' : '/en/apartment/bed'}>
+                {pathname.includes('kr') ? 
+                "침대가 있는 원룸" : 
+                "Studio apartment – Western style"}
+            </SLink>
         </Item>
-        <Item current={ pathname === "/apartment/nobed" }>
-            <SLink to="/apartment/nobed">침대없는 원룸</SLink>
+        <Item current={ pathname === "/kr/apartment/nobed" || pathname === "/en/apartment/nobed" }>
+            <SLink to={pathname.includes('kr') ? '/kr/apartment/nobed' : '/en/apartment/nobed'}>
+                {pathname.includes('kr') ? 
+                "침대없는 원룸" : 
+                "Studio apartment – Ondol style"
+                }
+                <br/>
+                {pathname.includes('kr') ? '' : "(Korean style sleeping without bed frame)"}
+            </SLink>
         </Item>
     </List>
 ))

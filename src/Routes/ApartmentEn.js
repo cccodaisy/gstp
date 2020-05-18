@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Sns from "Components/Sns";
 import Rooms from "Components/Rooms";
 
-
 const Section = styled.section`
     width: 100%;
     display: flex;
@@ -35,10 +34,10 @@ const Section = styled.section`
             padding: 0 15px;
         }
     }
-    @media only screen and (max-width: 780px) {  
-        margin-top: 100px;    
+    @media only screen and (max-width: 780px) { 
+        margin-top: 100px;   
         width: 88%; 
-        margin-left: 6%;  
+        margin-left: 6%;       
         & h3{
             font-size: 2em;
             margin: 10% auto 20% auto;
@@ -57,7 +56,7 @@ const OptionInfo = styled.div`
     img {
         width: 60%;
         margin: 20px 20%;
-    }
+    } 
     @media only screen and (max-width: 780px) {      
         img {
             width: 90%;
@@ -88,39 +87,38 @@ const RoomImg = styled.div`
     }
 `
 
-function Apartment2(){
+function Apartment(){
+
     useEffect(() => {
         window.scrollTo(0, 0);
     })
     return (
         <>
             <Section>
-                <h3>원룸 타입별 안내</h3>
+                <h3>Types of studio apartment</h3>
                 <div className="inner">
                 <Rooms/>
                     <OptionInfo>
-                        <h4>옵션</h4>
-                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-nobed.png` : `${process.env.REACT_APP_IMG}images/img-option-nobed-mobile.png`} alt="옵션이미지"/>
-                        <h4>보안 시설</h4>
-                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="보안이미지"/>
+                        <h4>Option</h4>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-bed-en.png` : `${process.env.REACT_APP_IMG}images/img-option-bed-mobile.png`} alt="optionImg"/>
+                        <h4>Security</h4>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security-en.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="securityImg"/>
                     </OptionInfo>
                     <RoomImg>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-1.jpg`} alt="침대없는 원룸 이미지1"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-2.jpg`} alt="침대없는 원룸 이미지2"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-3.jpg`} alt="침대없는 원룸 이미지3"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-4.jpg`} alt="침대없는 원룸 이미지4"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-5.jpg`} alt="침대없는 원룸 이미지5"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-6.jpg`} alt="침대없는 원룸 이미지6"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-7.jpg`} alt="침대없는 원룸 이미지7"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-8.jpg`} alt="침대없는 원룸 이미지8"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-9.jpg`} alt="침대없는 원룸 이미지9"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-1.jpg`} alt="optionBedImg1"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-2.jpg`} alt="optionBedImg2"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-3.jpg`} alt="optionBedImg3"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-4.jpg`} alt="optionBedImg4"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-5.jpg`} alt="optionBedImg5"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-6.jpg`} alt="optionBedImg6"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-option-bed-7.jpg`} alt="optionBedImg7"/>
                     </RoomImg>
                 </div>
             </Section>
-            <Sns lang='kr' snsText="원룸의 사이즈와 가구배치는 각 원룸 마다 차이가 있을 수 있습니다."
-            snsText2="자세한 입주 문의 및 기타 상담은 메신저를 통해 가능합니다." />
+            <Sns lang='en' snsText="Please be aware that each studio size and configuration may vary."
+            snsText2="Please contact us via Kakao or Wechat for more information regarding your stay and application." />
         </>
     );
 }
 
-export default Apartment2;
+export default Apartment;

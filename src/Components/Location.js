@@ -112,18 +112,18 @@ const AddressInfo = styled.div`
     }
 `
 
-const Location = () => (
+const Location = (props) => (
     <Section>
         <Inner>
             <AddressInfo>
-                <h3>태학관 오는 방법</h3>
+                <h3>{props.lang === 'kr' ? "태학관 오는 방법" : "How to find Taehakgwan"}</h3>
                 <div>
-                주변 버스 정보 | <span>5515B 버스 탑승 후<br/>
-                현대 아파트 종점에서 하차</span> <br/><br/>
-                오시는 길과 방법은 메신저를 통해 <br/>자세히 안내해 드립니다. 
+                {props.lang === 'kr' ?"주변 버스 정보" : "Taking the bus around"} | <span>{props.lang === 'kr' ? "5515B 버스 탑승 후" : "Get off at Hyundai Apartment"}<br/>
+                {props.lang === 'kr' ? "현대 아파트 종점에서 하차" : "(this is the final stop) on the 5515B bus"}</span> <br/><br/>
+                {props.lang === 'kr' ? "오시는 길과 방법은 메신저를 통해 " :"Please contact us via messenger"}<br/>{props.lang === 'kr' ? "자세히 안내해 드립니다." : " for detailed instructions to get to Taehakgwan"}
                 </div>
                 <Link to="http://qr.kakao.com/talk/SZ5jdXVtw6OTryWqdyJAPRz3I.w-">
-                    <span className="more">카카오톡으로 안내받기</span>
+                    <span className="more">{props.lang === 'kr' ? "카카오톡으로 안내받기" : "Contact us via Kakao"}</span>
                 </Link>
             </AddressInfo>
             <Link className="map" to={MAP} target="_blank" rel="noopener noreferrer" ></Link>

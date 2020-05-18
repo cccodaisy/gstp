@@ -89,20 +89,19 @@ function Facility(props){
     return (
         <>
             <Section>
-                <h3>태학관 공유 라운지 </h3>
+                <h3>The common area</h3>
                 <div className="inner">
                     <DetailInfo>
                         <p>
-                        개인실 원룸형 아파트 구조면서 건물 1층에 공유공간 거실을 함께 가지고 있습니다. <br/>
-                        공유공간에서는 휴식과 다양한 커뮤니티 활동 프로그램을 가질 수 있습니다. 
+                        Our building consists of studio style apartments where every resident can relax and <br/>engage in various community programs in the common area located on first floor.
                         </p>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-1.jpg`} alt="라운지 이미지1"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-2.jpg`} alt="라운지 이미지2"/>
-                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-3.jpg`} alt="라운지 이미지3"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-1.jpg`} alt="shareLounge1"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-2.jpg`} alt="shareLounge2"/>
+                        <img src={`${process.env.REACT_APP_IMG}images/img-sharelounge-3.jpg`} alt="shareLounge3"/>
                     </DetailInfo>
                 </div>
             </Section>
-            <Sns lang='kr' />
+            <Sns lang='en'/>
         </>
     );
 }

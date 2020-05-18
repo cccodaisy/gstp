@@ -6,18 +6,18 @@ import Sidebar from "react-sidebar";
 
 const Header = styled.header`
     color: white;
-    position: ${props => props.current === '/' ? 'absolute' : 'relative'};
+    position: ${props => props.current === '/' || props.current === '/kr' || props.current === '/en' ? 'absolute' : 'relative'};
     top: 0;
     left: 0;
     width: 100%;
-    background-color: ${props => props.current === '/' ? 'transparent' : '#4d4d4d'};
+    background-color: ${props => props.current === '/' || props.current === '/kr' || props.current === '/en' ? 'transparent' : '#4d4d4d'};
     z-index: 10;
     transition: all 0.5s ease-in-out;
     @media only screen and (max-width: 780px) {
         height: ${props => props.isMenuOpen === true ? '100%' : '72px'};
         position: fixed;
         background-color: 
-        ${props => props.current === '/' ? (props.bgColor ? props.bgColor : 'transparent') : props.isMenuOpen === true ? 'transparent' : (props.bgColor ? props.bgColor : '#4d4d4d')}
+        ${props => props.current === '/' || props.current === '/kr' || props.current === '/en' ? (props.bgColor ? props.bgColor : 'transparent') : props.isMenuOpen === true ? 'transparent' : (props.bgColor ? props.bgColor : '#4d4d4d')}
     }
 `;
 
@@ -86,10 +86,14 @@ const Item = styled.li`
         }
     }
     @media only screen and (max-width: 780px) {
+        height: 60px;
         position: unset;
         margin: 0;
         padding: 0 5px;
         border-bottom: 1px solid white;
+        &:hover{
+            border-bottom: 1px solid white;
+        }
     }
 `;
 
@@ -234,7 +238,7 @@ class HeaderWrapper extends React.Component {
         if (this.props.location.pathname !== prevProps.location.pathname) {
             this.setState({
                 isMenuOpen: false,
-                bgColor: this.props.location.pathname === '/' ? 'transparent' : '#4d4d4d'
+                bgColor: this.props.location.pathname === '/' || this.props.location.pathname === '/kr' || this.props.location.pathname === '/en'  ? 'transparent' : '#4d4d4d'
             })
         }
     }
@@ -269,7 +273,7 @@ class HeaderWrapper extends React.Component {
         } 
         else{
             this.setState({
-                bgColor: this.props.location.pathname === '/' ? 'transparent' : '#4d4d4d'
+                bgColor: this.props.location.pathname === '/' || this.props.location.pathname === '/kr' || this.props.location.pathname === '/en' ? 'transparent' : '#4d4d4d'
             })
         }
     };
@@ -283,31 +287,31 @@ class HeaderWrapper extends React.Component {
         <Header current={ pathname } >
             <Inner>
                 <Logo>
-                    <SLink to="/" className="home" style={{height: "85px"}}></SLink>
+                    <SLink to={pathname.includes('kr') ? '/kr' : '/en'} className="home" style={{height: "85px"}}></SLink>
                 </Logo>
                 <List>
-                    <Item current={ pathname === "/language" }>
-                        <SLink style={{width: '130px'}} to="/kr">Language<span></span></SLink>
+                    <Item >
+                        <SLink style={{width: '130px'}} to={pathname.includes('kr') ? '/kr' : '/en'} >Language<span></span></SLink>
                         <Deps>
                             <DLink to="/kr" >한국어</DLink>
-                            <DLink to="/eng" >English</DLink>
+                            <DLink to="/en" >English</DLink>
                         </Deps>
                     </Item>
-                    <Item current={ pathname === "/contact" }>
-                        <SLink to="/contact">Contact &amp; Location</SLink>
+                    <Item current={ pathname === "/kr/contact" || pathname === "/en/contact" }>
+                        <SLink to={pathname.includes('kr') ? '/kr/contact' : '/en/contact'}>Contact &amp; Location</SLink>
                     </Item>
                     <Item current={ pathname.includes("/facility") }>
-                        <SLink style={{width: '130px'}} to="/facility/lounge">Facilities<span></span></SLink>
+                        <SLink style={{width: '130px'}} to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>Facilities<span></span></SLink>
                         <Deps>
-                            <DLink to="/facility/lounge">공유 라운지</DLink>
-                            <DLink to="/facility/nearby">주변 시설</DLink>
+                            <DLink to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>{ pathname.includes('/kr') ? '공유 라운지' : 'The common area' }</DLink>
+                            <DLink to={pathname.includes('kr') ? '/kr/facility/nearby' : '/en/facility/nearby'}>{ pathname.includes('/kr') ? '주변 시설' : 'Places to see nearby' }</DLink>
                         </Deps>
                     </Item>
                     <Item current={ pathname.includes('/apartment') }>
-                        <SLink to="/apartment/bed">Apartment Type</SLink>
+                        <SLink to={pathname.includes('kr') ? '/kr/apartment/bed' : '/en/apartment/bed'}>Apartment Type</SLink>
                     </Item>
-                    <Item current={ pathname === "/aboutus" }>
-                        <SLink to="/aboutus">AboutUs</SLink>
+                    <Item current={ pathname === "/kr/aboutus" || pathname === "/en/aboutus" }>
+                        <SLink to={pathname.includes('kr') ? '/kr/aboutus' : '/en/aboutus'}>AboutUs</SLink>
                     </Item>
                 </List>
             </Inner>
@@ -315,33 +319,33 @@ class HeaderWrapper extends React.Component {
         :
         <Header isMenuOpen={isMenuOpen} current={ pathname } bgColor={bgColor}>
             <Logo>
-                <SLink to="/" className="home" style={{height: "60px"}}></SLink>
+                <SLink to={pathname.includes('kr') ? '/kr' : '/en'}  className="home" style={{height: "60px"}}></SLink>
             </Logo>
             <Sidebar 
                 pullRight={true}
                 sidebar={
                     <List>
-                        <Item current={ pathname === "/aboutus" }>
-                            <SLink to="/aboutus">AboutUs</SLink>
+                        <Item current={ pathname === "/kr/aboutus" }>
+                            <SLink to="/kr/aboutus">AboutUs</SLink>
                         </Item>
                         <Item current={ pathname.includes('/apartment') }>
-                            <SLink to="/apartment/bed">Apartment Type</SLink>
+                            <SLink to="/kr/apartment/bed">Apartment Type</SLink>
                         </Item>
                         <Item current={ pathname.includes("/facility") } style={{height: '130px'}}>
-                            <SLink to="/facility/lounge">Facilities</SLink>
+                            <SLink to="/kr/facility/lounge">Facilities</SLink>
                             <Deps>
-                                <DLink to="/facility/lounge">공유 라운지</DLink>
-                                <DLink to="/facility/nearby">주변 시설</DLink>
+                                <DLink to="/kr/facility/lounge">{ pathname.includes('/kr') ? '공유 라운지' : 'The common area' }</DLink>
+                                <DLink to="/kr/facility/nearby">{ pathname.includes('/kr') ? '주변 시설' : 'Places to see nearby' }</DLink>
                             </Deps>
                         </Item>
-                        <Item current={ pathname === "/contact" }>
-                            <SLink to="/contact">Contact &amp; Location</SLink>
+                        <Item current={ pathname === "/kr/contact" }>
+                            <SLink to="/kr/contact">Contact &amp; Location</SLink>
                         </Item>
-                        <Item current={ pathname === "/language" } style={{height: '130px'}}>
-                            <SLink to="/kr" >Language</SLink>
+                        <Item style={{height: '130px'}}>
+                            <SLink to={pathname.includes('kr') ? '/kr' : '/en'}  >Language</SLink>
                             <Deps>
                                 <DLink to="/kr" >한국어</DLink>
-                                <DLink to="/eng" >English</DLink>
+                                <DLink to="/en" >English</DLink>
                             </Deps>
                         </Item>
                     </List>

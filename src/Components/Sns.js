@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import KAKAO_LOGO from "images/img-kakaotalk-logo.png"
 import WECHAT_LOGO from "images/img-wechat-logo.png"
@@ -107,9 +106,9 @@ const Connect = styled.div`
 
 const Sns = (props) => (
     <Section marginTop={props.marginTop}>
-        <h3>입주 문의 및 상담방법</h3>
+        <h3>{props.lang === 'kr' ? "입주 문의 및 상담방법" : "How to contact us"}</h3>
         <p>
-            {props.snsText ?? "자세한 입주 문의 및 기타 상담은 메신저를 통해 가능합니다."} 
+            {props.snsText ? props.snsText : props.lang === 'kr' ? "자세한 입주 문의 및 기타 상담은 메신저를 통해 가능합니다." : "Please contact us via Kakao or Wechat for more information regarding your stay and application."} 
             <br/>{props.snsText2 ?? null}
         </p>
         <Contacts>
@@ -118,14 +117,14 @@ const Sns = (props) => (
                 <Snsid>
                     Kakao Plus | <span>GDTHG7</span>
                 </Snsid>
-                <Connect>카카오톡으로 상담하기</Connect>
+                <Connect>{props.lang === 'kr' ? "카카오톡으로 상담하기" : "Contact us via Kakao"}</Connect>
             </Social>
             <Social href="https://u.wechat.com/IO3zvzL5iQEi11-nqjxJFEM" target="blank">
                 <img src={WECHAT_LOGO} alt="wechat" />
                 <Snsid>
                     WeChat | <span>GDTHG7</span>
                 </Snsid>
-                <Connect>위챗으로 상담하기</Connect>
+                <Connect>{props.lang === 'kr' ? "위챗으로 상담하기" : "Contact us via Wechat"}</Connect>
             </Social>
         </Contacts>
     </Section>

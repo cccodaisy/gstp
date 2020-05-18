@@ -139,43 +139,51 @@ const DLink = styled(Link)`
     }
 `;
 
-export default withRouter (() => (
+export default withRouter (({ location : { pathname }}) => (
     <Footer>
         <Infos>
             <Logo>
-                <SLink to="/"><img src={LOGO_FT} width="110" height="auto" alt="태학관로고"/></SLink>
+                <SLink to={pathname.includes('kr') ? '/kr' : '/en'} ><img src={LOGO_FT} width="110" height="auto" alt="태학관로고"/></SLink>
             </Logo>
             <Lists>
                 <List>
                     <Item>
-                        <SLink to="/aboutus">About Us</SLink>
+                        <SLink to="/kr/aboutus">About Us</SLink>
                     </Item>
                     <Item>
-                        <SLink to="/apartment/bed">Apartment Type</SLink>
+                        <SLink to="/kr/apartment/bed">Apartment Type</SLink>
                     </Item>
                     <Item>
                         <SLink className='nohover' to="/facility/lounge">
                             Facilities 
                         </SLink>
-                        <DLink to="/facility/lounge"><span>공유 라운지</span></DLink>
+                        <DLink to="/kr/facility/lounge">
+                            <span>
+                                { pathname.includes('/kr') ? '공유 라운지' : 'The common area' }
+                            </span>
+                        </DLink>
                         <span style={{marginLeft: '8px'}}>/</span>
-                        <DLink to="/facility/nearby"><span>태학관 주변 시설 안내</span></DLink>
+                        <DLink to="/kr/facility/nearby">
+                            <span>
+                                { pathname.includes('/kr') ? '태학관 주변 시설 안내' : 'Places to see nearby' }
+                            </span>
+                        </DLink>
                     </Item>
                     <Item>
-                        <SLink to="/contact">Contact &amp; Location</SLink>
+                        <SLink to="/kr/contact">Contact &amp; Location</SLink>
                     </Item>
                 </List>
                 <List>
                     <Item>
-                        <SLink to="/language">한국어 웹사이트</SLink>
+                        <SLink to="/kr">한국어 웹사이트</SLink>
                     </Item>
                     <Item>
-                        <SLink to="/language">English website</SLink>
+                        <SLink to="/en">English website</SLink>
                     </Item>
                 </List>
                 <List className="sns">
                     <Item style={{fontSize: '16.8px', borderRight: 'none'}}>
-                        서울 관악구 대학18길 30   
+                        { pathname.includes('/kr') ? '서울 관악구 대학18길 30' : '30, Daehak 18-gil, Gwanak-gu, Seoul, Republic of Korea ' }
                     </Item>
                     <SnsLinks>
                         <SnsLink>
