@@ -99,18 +99,18 @@ function Apartment2(){
     return (
         <>
             <Section>
-                <h3>Types of studio apartment</h3>
+                <h3>Types</h3>
                 <div className="inner">
                 <Rooms/>
                     <OptionInfo>
+                        <h4>Details</h4>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-nobed-en.png` : `${process.env.REACT_APP_IMG}images/img-option-nobed-mobile.png`} alt="optionImg"/>
+                        <h4>Security</h4>
+                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security-en.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="securityImg"/>
                         <p>* Ondol is a Korean traditional style of sleeping, where you will be given a thick plush mattress and regular bedding (pillows and duvet) but without a bed frame. <br/>
                             In most Korean housings including Taehakgwan, the heating system comes from the floor. Residents who choose to stay in Ondol will sleep on heated floors, 
                             over a thick mattress which will make your stay cozy and warm.
                         </p>
-                        <h4>Option</h4>
-                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-nobed-en.png` : `${process.env.REACT_APP_IMG}images/img-option-nobed-mobile.png`} alt="optionImg"/>
-                        <h4>Security</h4>
-                        <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security-en.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="securityImg"/>
                     </OptionInfo>
                     <RoomImg>
                         <img src={`${process.env.REACT_APP_IMG}images/img-option-nobed-1.jpg`} alt="optionNoBedImg1"/>

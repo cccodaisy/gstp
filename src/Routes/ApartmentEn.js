@@ -95,11 +95,11 @@ function Apartment(){
     return (
         <>
             <Section>
-                <h3>Types of studio apartment</h3>
+                <h3>Types</h3>
                 <div className="inner">
                 <Rooms/>
                     <OptionInfo>
-                        <h4>Option</h4>
+                        <h4>Details</h4>
                         <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-option-bed-en.png` : `${process.env.REACT_APP_IMG}images/img-option-bed-mobile.png`} alt="optionImg"/>
                         <h4>Security</h4>
                         <img src={window.innerWidth > 780 ? `${process.env.REACT_APP_IMG}images/img-security-en.png` : `${process.env.REACT_APP_IMG}images/img-security-mobile.png`} alt="securityImg"/>

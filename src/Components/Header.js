@@ -325,21 +325,21 @@ class HeaderWrapper extends React.Component {
                 pullRight={true}
                 sidebar={
                     <List>
-                        <Item current={ pathname === "/kr/aboutus" }>
-                            <SLink to="/kr/aboutus">AboutUs</SLink>
+                        <Item current={ pathname === "/kr/aboutus"  || pathname === "/en/aboutus"}>
+                            <SLink to={pathname.includes('kr') ? '/kr/aboutus' : '/en/aboutus'}>AboutUs</SLink>
                         </Item>
                         <Item current={ pathname.includes('/apartment') }>
-                            <SLink to="/kr/apartment/bed">Apartment Type</SLink>
+                            <SLink to={pathname.includes('kr') ? '/kr/apartment/bed' : '/en/apartment/bed'}>Apartment Type</SLink>
                         </Item>
                         <Item current={ pathname.includes("/facility") } style={{height: '130px'}}>
-                            <SLink to="/kr/facility/lounge">Facilities</SLink>
+                            <SLink to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>Facilities</SLink>
                             <Deps>
-                                <DLink to="/kr/facility/lounge">{ pathname.includes('/kr') ? '공유 라운지' : 'The common area' }</DLink>
-                                <DLink to="/kr/facility/nearby">{ pathname.includes('/kr') ? '주변 시설' : 'Places to see nearby' }</DLink>
+                                <DLink to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>{ pathname.includes('/kr') ? '공유 라운지' : 'The common area' }</DLink>
+                                <DLink to={pathname.includes('kr') ? '/kr/facility/nearby' : '/en/facility/nearby'}>{ pathname.includes('/kr') ? '주변 시설' : 'Places to see nearby' }</DLink>
                             </Deps>
                         </Item>
-                        <Item current={ pathname === "/kr/contact" }>
-                            <SLink to="/kr/contact">Contact &amp; Location</SLink>
+                        <Item current={ pathname === "/kr/contact"  || pathname === "/en/contact"}>
+                            <SLink to={pathname.includes('kr') ? '/kr/contact' : '/en/contact'}>Contact &amp; Location</SLink>
                         </Item>
                         <Item style={{height: '130px'}}>
                             <SLink to={pathname.includes('kr') ? '/kr' : '/en'}  >Language</SLink>

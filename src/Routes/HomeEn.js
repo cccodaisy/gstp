@@ -340,10 +340,7 @@ class Home extends React.Component {
           <h1>Taehakgwan</h1>
           <Inner>
             <div className="textbox">Taehakgwan House</div>
-            {this.state.windowWidth > 780 ? 
-            <h2>Taehakgwan offers housing for people all over the world where they get to reside in private apartments.</h2> 
-            : 
-            <h2>Taehakgwan offers housing for people all over the world where they get to reside in private apartments.</h2>}
+            <h2>Taehakgwan offers housing for people all over the world where they get to reside in private apartments.</h2>
             <img src={ARROW_D} alt='arrow_down'/>
           </Inner>
         </Section>
@@ -352,7 +349,7 @@ class Home extends React.Component {
             <Slider {...settings}>
               <Slide
                 bgImg='images/banner-1.jpg'
-                href='/facility/lounge'
+                href='/en/facility/lounge'
                 title='The common area for everyone'
                 desc={this.state.windowWidth > 780 ? 
                   "The common area is shared by all members of Taehakgwan and is available 24/7.  It is where residents can relax and have fun. You can engage and get to know the other residents and participate in various community programs at Taehakgwan's common area."
@@ -361,18 +358,18 @@ class Home extends React.Component {
               />
               <Slide
                 bgImg='images/banner-2.jpg'
-                href='/apartment/bed'
+                href='/en/apartment/bed'
                 title='Types of apartments'
                 desc={this.state.windowWidth > 780 ? 'At Taehakgwan, each studio apartment comes with a personal bathroom including a sink and a shower booth. Additionally, every resident will get a refrigerator, washing machine, induction stove top, kitchen sink, desk, chair and air conditioner in their studio. You can decide to stay in either a studio...' 
                 : 'At Taehakgwan, each studio apartment comes with a personal bathroom including a sink and a shower booth. Additionally, every resident will get...'}
               />
               <Slide
                 bgImg='images/banner-3.jpg'
-                href='/facility/nearby'
+                href='/en/facility/nearby'
                 title='The Seoul Trail'
                 desc={this.state.windowWidth > 780 ? `The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. Taehakgwan is close to the 5th section of the Seoul trail and is only 5 minutes by walking. Facilities near this section of the trail include a mountain library, outdoor gym areas, historical sites, Samsungsan... ` 
                   : 
-                  `The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. Taehakgwan is close to...`
+                  `The Seoul Trail, consisting of urban terrains and greenery, circumscribes the entire city of Seoul. Taehakgwan is close to the 5th section of...`
                 }
               />
             </Slider>

@@ -148,29 +148,29 @@ export default withRouter (({ location : { pathname }}) => (
             <Lists>
                 <List>
                     <Item>
-                        <SLink to="/kr/aboutus">About Us</SLink>
+                        <SLink to={pathname.includes('kr') ? '/kr/aboutus' : '/en/aboutus'}>About Us</SLink>
                     </Item>
                     <Item>
-                        <SLink to="/kr/apartment/bed">Apartment Type</SLink>
+                        <SLink to={pathname.includes('kr') ? '/kr/apartment/bed' : '/en/apartment/bed'}>Apartment Type</SLink>
                     </Item>
                     <Item>
-                        <SLink className='nohover' to="/facility/lounge">
+                        <SLink className='nohover' to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>
                             Facilities 
                         </SLink>
-                        <DLink to="/kr/facility/lounge">
+                        <DLink to={pathname.includes('kr') ? '/kr/facility/lounge' : '/en/facility/lounge'}>
                             <span>
                                 { pathname.includes('/kr') ? '공유 라운지' : 'The common area' }
                             </span>
                         </DLink>
                         <span style={{marginLeft: '8px'}}>/</span>
-                        <DLink to="/kr/facility/nearby">
+                        <DLink to={pathname.includes('kr') ? '/kr/facility/nearby' : '/en/facility/nearby'}>
                             <span>
                                 { pathname.includes('/kr') ? '태학관 주변 시설 안내' : 'Places to see nearby' }
                             </span>
                         </DLink>
                     </Item>
                     <Item>
-                        <SLink to="/kr/contact">Contact &amp; Location</SLink>
+                        <SLink to={pathname.includes('kr') ? '/kr/contact' : '/en/contact'}>Contact &amp; Location</SLink>
                     </Item>
                 </List>
                 <List>
